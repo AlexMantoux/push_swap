@@ -1,14 +1,14 @@
-SRC_DIR=srcs
+SRC_DIR_PRINTF=srcs
 
-SRC=$(SRC_DIR)/format_d.c\
-	$(SRC_DIR)/format_c.c\
-	$(SRC_DIR)/format_p.c\
-	$(SRC_DIR)/format_x.c\
-	$(SRC_DIR)/format_x_upper.c\
-	$(SRC_DIR)/format_u.c\
-	$(SRC_DIR)/format_s.c\
-	$(SRC_DIR)/handle_format.c\
-	$(SRC_DIR)/ft_printf.c\
+SRC_PRINTF=$(SRC_DIR_PRINTF)/format_d.c\
+	$(SRC_DIR_PRINTF)/format_c.c\
+	$(SRC_DIR_PRINTF)/format_p.c\
+	$(SRC_DIR_PRINTF)/format_x.c\
+	$(SRC_DIR_PRINTF)/format_x_upper.c\
+	$(SRC_DIR_PRINTF)/format_u.c\
+	$(SRC_DIR_PRINTF)/format_s.c\
+	$(SRC_DIR_PRINTF)/handle_format.c\
+	$(SRC_DIR_PRINTF)/ft_printf.c\
 
 INC_DIR = includes/**
 
