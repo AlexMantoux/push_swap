@@ -18,7 +18,7 @@ lorem ipsum ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo en
 
 ## Details
 
-lorem ipsum ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen 
+lorem ipsum ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen ade ijewf onfewfo enrw o fjwnef weojf nwe ojfwen ade ijewf onfewfo enrw ofjwnef weojf nwe ojfwen 
 
 ### Use of AI
-- AI assistance was used to understand specific concepts like buffers, memory flow, and file descriptors.
+loremmwermewremwrwerewr IA
