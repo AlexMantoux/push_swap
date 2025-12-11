@@ -69,17 +69,20 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-void	ft_lstdisplay(t_list **lst)
+void	ft_lstdisplay(t_list **lst, char c)
 {
 	t_list	*current;
-	char   c;
 
 	current = *lst;
-	while (!current)
-	{
+	while (current != NULL)
+	{     
+		printf("%d\n", current->content);
 		// ft_printf("%d", current->content);
-		c = current->content + '0';
-		write(1, &c, 1);
 		current = current->next;
 	}
+	printf("-\n");
+	if (c == 'a')
+        printf("a\n");
+	else
+		printf("b\n");
 }
