@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   linked_list_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:51:30 by amantoux          #+#    #+#             */
-/*   Updated: 2025/11/10 13:58:23 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/11 09:13:04 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	ft_lstdisplay(t_list **lst, char c)
 		// ft_printf("%d", current->content);
 		current = current->next;
 	}
-	printf("-\n");
+	printf("_\n");
 	if (c == 'a')
         printf("a\n");
 	else
