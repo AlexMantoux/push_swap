@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:23 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/23 11:54:23 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 15:10:50 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void swap_a_b(t_list **stack_a, t_list **stack_b)
 {
     swap_a(stack_a);
     swap_b(stack_b);
+    // write(1, "ss\n", 3);
 }

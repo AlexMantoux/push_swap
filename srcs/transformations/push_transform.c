@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:21 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/23 12:09:27 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 15:12:18 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,4 @@ void push_b(t_list **stack_a, t_list **stack_b)
     tmp->next = *stack_b;
     *stack_b = tmp;
     // write(1, "pb\n", 3);
-}
-
-void push_a_b(t_list **stack_a, t_list **stack_b)
-{
-    return ;
 }
