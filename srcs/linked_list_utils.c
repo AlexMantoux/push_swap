@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:51:30 by amantoux          #+#    #+#             */
-/*   Updated: 2025/12/11 09:13:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 11:51:22 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	ft_lstdisplay(t_list **lst, char c)
 	t_list	*current;
 
 	current = *lst;
+	printf("\n");
 	while (current != NULL)
 	{     
 		printf("%d\n", current->content);

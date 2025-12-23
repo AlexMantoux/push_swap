@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/11 09:47:43 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 12:04:28 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ t_list  *ft_lstlast(t_list *lst);
 void	ft_lstdisplay(t_list **lst, char c);
 void    swap_a(t_list **lst_a);
 void    swap_b(t_list **lst_b);
-void    swap_a_b(t_list **lst_a_b);
-void    push_a(t_list **lst_a);
-void    push_b(t_list **lst_b);
-void    push_a_b(t_list **lst_a_b);
+void    swap_a_b(t_list **stack_a, t_list **stack_b);
+void    push_a(t_list **stack_a, t_list **stack_b);
+void    push_b(t_list **stack_a, t_list **stack_b);
+void    push_a_b(t_list **stack_a, t_list **stack_b);
 void    rotate_a(t_list **lst_a);
 void    rotate_b(t_list **lst_b);
 void    rotate_a_b(t_list **lst_a_b);

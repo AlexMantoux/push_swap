@@ -6,35 +6,44 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:23 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/11 09:47:28 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 11:54:23 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void swap_a(t_list **lst_a)
+void swap_a(t_list **stack_a)
 {
-    t_list *tmp;
+    t_list  *first;
+    t_list  *second;
 
-    tmp = *lst_a;
-    if (!(*lst_a)->next)
+    if (!stack_a || !*stack_a || !(*stack_a)->next)
         return ;
-    *lst_a = (*lst_a)->next;
-    (*lst_a)->next = tmp;
+    first = *stack_a;
+    second = first->next;
+    first->next = second->next;
+    second->next = first;
+    *stack_a = second;
+    // write(1, "sa\n", 3);
 }
 
-void swap_b(t_list **lst_b)
+void swap_b(t_list **stack_b)
 {
-    t_list *tmp;
+    t_list  *first;
+    t_list  *second;
 
-    tmp = *lst_b;
-    if (!(*lst_b)->next)
+    if (!stack_b || !*stack_b || !(*stack_b)->next)
         return ;
-    *lst_b = (*lst_b)->next;
-    (*lst_b)->next = tmp;
+    first = *stack_b;
+    second = first->next;
+    first->next = second->next;
+    second->next = first;
+    *stack_b = second;
+    // write(1, "sb\n", 3);
 }
 
-void swap_a_b(t_list **lst_a_b)
+void swap_a_b(t_list **stack_a, t_list **stack_b)
 {
-    return ;
+    swap_a(stack_a);
+    swap_b(stack_b);
 }

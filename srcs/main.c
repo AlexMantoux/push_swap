@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/11 09:52:43 by amantoux         ###   ########.fr       */
+/*   Updated: 2025/12/23 11:50:32 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main (int argc, char **argv)
         }
         ft_lstdisplay(&lst_a, 'a');
         swap_a(&lst_a);
+        ft_lstdisplay(&lst_a, 'a');
+
     }
     return (0);
 }
