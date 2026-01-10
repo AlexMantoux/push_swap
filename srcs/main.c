@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2025/12/23 12:11:28 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/10 11:55:46 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main (int argc, char **argv)
         push_b(&lst_a, &lst_b);
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
+        printf("\n%f", compute_disorder(lst_a));
     }
     return (0);
 }
