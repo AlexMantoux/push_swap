@@ -10,7 +10,7 @@ SRC=$(SRC_DIR)/format_d.c\
 	$(SRC_DIR)/handle_format.c\
 	$(SRC_DIR)/ft_printf.c\
 
-INC_DIR = includes/**
+INC_DIR = includes
 
 CC = cc
 
