@@ -6,11 +6,12 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:51:30 by amantoux          #+#    #+#             */
-/*   Updated: 2025/12/23 12:10:30 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:11:48 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../../ft_printf/includes/ft_printf.h"
 #include <stdlib.h>
 
 t_list	*ft_lstnew(int content)
@@ -74,16 +75,16 @@ void	ft_lstdisplay(t_list **lst, char c)
 	t_list	*current;
 
 	current = *lst;
-	printf("\n");
+	ft_printf("\n");
 	while (current != NULL)
 	{     
-		printf("%d\n", current->content);
+		ft_printf("%d\n", current->content);
 		// ft_printf("%d", current->content);
 		current = current->next;
 	}
-	printf("_\n");
+	ft_printf("_\n");
 	if (c == 'a')
-        printf("a\n");
+        ft_printf("a\n");
 	else
-		printf("b\n");
+		ft_printf("b\n");
 }

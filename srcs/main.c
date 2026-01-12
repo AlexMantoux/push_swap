@@ -6,11 +6,12 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/10 11:55:46 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/12 11:11:22 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../../ft_printf/includes/ft_printf.h"
 
 int main (int argc, char **argv)
 {
@@ -31,17 +32,17 @@ int main (int argc, char **argv)
         }
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
-        printf("______________________________\n");
+        ft_printf("______________________________\n");
         swap_a(&lst_a);
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
-        printf("______________________________\n");
+        ft_printf("______________________________\n");
         push_b(&lst_a, &lst_b);
         push_b(&lst_a, &lst_b);
         push_b(&lst_a, &lst_b);
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
-        printf("\n%f", compute_disorder(lst_a));
+        ft_printf("\n%f", compute_disorder(lst_a));
     }
     return (0);
 }
