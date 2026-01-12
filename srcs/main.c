@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/12 11:11:22 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/12 15:43:41 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,10 @@ int main (int argc, char **argv)
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
         ft_printf("______________________________\n");
-        swap_a(&lst_a);
+        selection_sort(&lst_a, &lst_b);
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
         ft_printf("______________________________\n");
-        push_b(&lst_a, &lst_b);
-        push_b(&lst_a, &lst_b);
-        push_b(&lst_a, &lst_b);
-        ft_lstdisplay(&lst_a, 'a');
-        ft_lstdisplay(&lst_b, 'b');
-        ft_printf("\n%f", compute_disorder(lst_a));
     }
     return (0);
 }
