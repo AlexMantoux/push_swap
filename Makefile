@@ -1,41 +1,48 @@
-SRC_DIR_PRINTF=srcs
+NAME        = push_swap
+CC          = cc
+CFLAGS      = -Wall -Wextra -Werror -MMD -MP
 
-SRC_PRINTF=$(SRC_DIR_PRINTF)/format_d.c\
-	$(SRC_DIR_PRINTF)/format_c.c\
-	$(SRC_DIR_PRINTF)/format_p.c\
-	$(SRC_DIR_PRINTF)/format_x.c\
-	$(SRC_DIR_PRINTF)/format_x_upper.c\
-	$(SRC_DIR_PRINTF)/format_u.c\
-	$(SRC_DIR_PRINTF)/format_s.c\
-	$(SRC_DIR_PRINTF)/handle_format.c\
-	$(SRC_DIR_PRINTF)/ft_printf.c\
+PRINTF_DIR  = ft_printf
+INC_DIR     = includes
+SRC_DIR     = srcs
+TRANS_DIR   = srcs/transformations
 
-INC_DIR = includes/**
+PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
 
-CC = cc
+SRC         = $(SRC_DIR)/main.c \
+              $(SRC_DIR)/push_swap.c \
+              $(SRC_DIR)/argument_utils.c \
+              $(SRC_DIR)/disorder.c \
+              $(SRC_DIR)/linked_list_utils.c \
+              $(TRANS_DIR)/push_transform.c \
+              $(TRANS_DIR)/reverse_rotate_transform.c \
+              $(TRANS_DIR)/rotate_transform.c \
+              $(TRANS_DIR)/swap_transform.c
 
-CFLAGS = -Werror -Wextra -Wall -MMD -MP
+OBJ         = $(SRC:.c=.o)
+DEPS        = $(SRC:.c=.d)
 
-NAME = libftprintf.a
+INCLUDES    = -I $(INC_DIR) -I $(PRINTF_DIR)/includes
 
-OBJ = $(SRC:.c=.o)
-DEPS = $(SRC:.c=.d)
+.PHONY: all clean fclean re libftprintf
 
-.PHONY: all clean fclean re
-
-#RULES#
-all: $(NAME)
+all: libftprintf $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $@ $^
+	$(CC) $(CFLAGS) $(OBJ) $(PRINTF_LIB) -o $(NAME)
+
+libftprintf:
+	@make -C $(PRINTF_DIR)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
+	@make -C $(PRINTF_DIR) clean
 	rm -rf $(OBJ) $(DEPS)
 
 fclean: clean
+	@make -C $(PRINTF_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
