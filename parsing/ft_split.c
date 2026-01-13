@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "../includes/push_swap.h"
 
-void	free_tab(char **tab)
+static void	free_tab(char **tab)
 {
 	int	i;
 
@@ -22,14 +23,14 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
-int	is_charset(char c, char charset)
+static int	is_charset(char c, char charset)
 {
 	if (c == charset)
 		return (1);
 	return (0);
 }
 
-int	count_words(char const *s, char charset)
+static int	count_words(char const *s, char charset)
 {
 	int	i;
 	int	count;
@@ -50,7 +51,7 @@ int	count_words(char const *s, char charset)
 	return (count);
 }
 
-char	*ft_words(char const *s, char charset)
+static char	*ft_words(char const *s, char charset)
 {
 	char	*ret;
 	int		i;

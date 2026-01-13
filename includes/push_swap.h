@@ -23,7 +23,12 @@ typedef struct s_list
         struct s_list   *next;
 }               t_list;
 
-int     ft_atoi(const char *str);
+long	ft_atoi(const char *str);
+int	ft_isdigit(char *str);
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+
 int     ft_lstsize(t_list *lst);
 void    ft_lstadd_front(t_list **lst, t_list *new);
 void    ft_lstadd_back(t_list **lst, t_list *new);

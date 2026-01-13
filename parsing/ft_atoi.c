@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+#include "../includes/push_swap.h"
+
+long	ft_atoi(const char *str)
 {
 	int		i;
-	int		sign;
+	long	sign;
 	long	result;
 
 	i = 0;
@@ -36,5 +38,5 @@ int	ft_atoi(const char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return ((int)result * sign);
+	return (result * sign);
 }
