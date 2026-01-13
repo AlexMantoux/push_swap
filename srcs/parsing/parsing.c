@@ -6,7 +6,7 @@
 /*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/12 10:09:44 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:13:24 by rtrutall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int	error_check_digits(char **argv)
 	return (1);
 }
 
-int	complete_lst(char **argv, t_list  *lst_a, t_list  *lst_b)
+int	complete_lst(char **argv, t_list  **lst_a)
 {
 	char	**ret;
 	int i;
@@ -74,11 +74,11 @@ int	complete_lst(char **argv, t_list  *lst_a, t_list  *lst_b)
 	ret = big_split(big_str(argv));
 	if (!error_check_digits(argv))
 		return (0);
-	lst_a = ft_lstnew((int)ft_atoi(argv[i]));
-	lst_b = NULL;
+	*lst_a = ft_lstnew((int)ft_atoi(ret[i]));
+	i++;
 	while (ret[i])
 	{
-		ft_lstadd_back(&lst_a, ft_lstnew((int)ft_atoi(argv[i])));
+		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i])));
 		i++;
 	}
 	return (1);
@@ -86,13 +86,14 @@ int	complete_lst(char **argv, t_list  *lst_a, t_list  *lst_b)
 
 // int main(int argc, char **argv)
 // {
+// 	(void)argc;
 // 	t_list  *lst_a;
 // 	t_list  *lst_b;
 //
 // 	lst_a = NULL;
 // 	lst_b = NULL;
 //
-// 	complete_lst(argv, lst_a, lst_b);
+// 	complete_lst(argv, &lst_a);
 // 	ft_lstdisplay(&lst_a, 'a');
 // 	ft_lstdisplay(&lst_b, 'b');
 // 	printf("______________________________\n");
