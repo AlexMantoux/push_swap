@@ -6,27 +6,30 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 10:54:08 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/12 13:17:40 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 10:50:12 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// Fix `nan` problem
 float	compute_disorder(t_list *stack_a)
 {
 	int		i;
 	int		j;
 	float	mistakes;
 	float	total_pairs;
+	int		size;
 
+	size = ft_lstsize(stack_a);
+	if (size <= 1)
+		return (0.0f);
 	i = 0;
 	mistakes = 0;
 	total_pairs = 0;
-	while (i < ft_lstsize(stack_a))
+	while (i < size)
 	{
 		j = i + 1;
-		while (j < ft_lstsize(stack_a))
+		while (j < size)
 		{
 			total_pairs += 1;
 			if (find_content_stack(stack_a, i) > find_content_stack(stack_a, j))
@@ -38,6 +41,7 @@ float	compute_disorder(t_list *stack_a)
 	return (mistakes / total_pairs);
 }
 
+
 int	find_content_stack(t_list *stack, int n)
 {
 	int	i;
@@ -47,7 +51,7 @@ int	find_content_stack(t_list *stack, int n)
 		return (0);
 	while (i < n)
 	{
-		stack=stack->next;
+		stack = stack->next;
 		i++;
 	}
 	return (stack->content);
