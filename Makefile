@@ -7,12 +7,12 @@ INC_DIR     = includes
 SRC_DIR     = srcs
 TRANS_DIR   = srcs/transformations
 SIMPLE_ALGO_DIR = srcs/simple_algorithm
+PARSING_DIR = srcs/parsing
 
 PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
 
 SRC         = $(SRC_DIR)/main.c \
               $(SRC_DIR)/push_swap.c \
-              $(SRC_DIR)/argument_utils.c \
               $(SRC_DIR)/disorder.c \
               $(SRC_DIR)/linked_list_utils.c \
               $(TRANS_DIR)/push_transform.c \
@@ -20,6 +20,13 @@ SRC         = $(SRC_DIR)/main.c \
               $(TRANS_DIR)/rotate_transform.c \
               $(TRANS_DIR)/swap_transform.c \
 			  $(SIMPLE_ALGO_DIR)/selection_sort.c \
+			  $(PARSING_DIR)/ft_atoi.c \
+			  $(PARSING_DIR)/ft_isdigit.c \
+			  $(PARSING_DIR)/ft_split.c \
+			  $(PARSING_DIR)/ft_strjoin.c \
+			  $(PARSING_DIR)/parsing.c \
+
+
 
 OBJ         = $(SRC:.c=.o)
 DEPS        = $(SRC:.c=.d)
