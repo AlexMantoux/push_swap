@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/12 15:43:41 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 11:19:25 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main (int argc, char **argv)
             ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(argv[i])));
             i++;
         }
+        ft_printf("Disorder: %f\n", compute_disorder(lst_a));
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
         ft_printf("______________________________\n");
