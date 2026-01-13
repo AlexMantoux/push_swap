@@ -6,11 +6,11 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:24:53 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/13 11:52:36 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:53:50 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	format_f(double f)
 {
-	
+	return (f);
 }
