@@ -28,6 +28,7 @@ int	ft_isdigit(const char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
+int	complete_lst(char **argv, t_list  **lst_a);
 
 int     ft_lstsize(t_list *lst);
 void    ft_lstadd_front(t_list **lst, t_list *new);

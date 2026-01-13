@@ -51,16 +51,27 @@ static int	error_check_digits(char **argv)
 	{
 		if (!ft_isdigit(ret[i]))
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			return (0);
 		}
 		n = ft_atoi(ret[i]);
 		if (n > 2147483647 || n < -2147483648)
 		{
-			printf("Error\n");
+			ft_printf("Error\n");
 			return (0);
 		}
 		i++;
+	}
+	return (1);
+}
+
+static int	find_in_lst(t_list *lst_a, int value)
+{
+	while (lst_a != NULL)
+	{
+		if (lst_a->content == value)
+			return (0);
+		lst_a = lst_a->next;
 	}
 	return (1);
 }
@@ -78,6 +89,11 @@ int	complete_lst(char **argv, t_list  **lst_a)
 	i++;
 	while (ret[i])
 	{
+		if (!find_in_lst(*lst_a, (int)ft_atoi(ret[i])))
+		{
+			ft_printf("Error\n");
+			return (0);
+		}
 		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i])));
 		i++;
 	}
@@ -93,12 +109,14 @@ int	complete_lst(char **argv, t_list  **lst_a)
 // 	lst_a = NULL;
 // 	lst_b = NULL;
 //
-// 	complete_lst(argv, &lst_a);
+// 	a = complete_lst(argv, &lst_a);
+// 	if (a == 0)
+// 		return (0);
 // 	ft_lstdisplay(&lst_a, 'a');
 // 	ft_lstdisplay(&lst_b, 'b');
-// 	printf("______________________________\n");
+// 	ft_printf("______________________________\n");
 // 	selection_sort(&lst_a, &lst_b);
 // 	ft_lstdisplay(&lst_a, 'a');
 // 	ft_lstdisplay(&lst_b, 'b');
-// 	printf("______________________________\n");
+// 	ft_printf("______________________________\n");
 // }
