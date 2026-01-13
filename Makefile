@@ -1,11 +1,12 @@
 NAME        = push_swap
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -MMD -MP
+CFLAGS      = -Wall -Wextra -Werror -MMD -MP -g
 
 PRINTF_DIR  = ft_printf
 INC_DIR     = includes
 SRC_DIR     = srcs
 TRANS_DIR   = srcs/transformations
+SIMPLE_ALGO_DIR = srcs/simple_algorithm
 
 PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
 
@@ -17,7 +18,8 @@ SRC         = $(SRC_DIR)/main.c \
               $(TRANS_DIR)/push_transform.c \
               $(TRANS_DIR)/reverse_rotate_transform.c \
               $(TRANS_DIR)/rotate_transform.c \
-              $(TRANS_DIR)/swap_transform.c
+              $(TRANS_DIR)/swap_transform.c \
+			  $(SIMPLE_ALGO_DIR)/selection_sort.c \
 
 OBJ         = $(SRC:.c=.o)
 DEPS        = $(SRC:.c=.d)
