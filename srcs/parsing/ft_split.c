@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 static void	free_tab(char **tab)
 {

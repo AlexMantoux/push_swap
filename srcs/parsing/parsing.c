@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf/includes/ft_printf.h"
-#include "../includes/push_swap.h"
+#include "../../ft_printf/includes/ft_printf.h"
+#include "../../includes/push_swap.h"
 
 char *big_str(char **argv)
 {
@@ -38,17 +38,44 @@ char	**big_split(char const *str)
 	return (ret);
 }
 
+void	error_check(char **argv)
+{
+	char	**ret;
+	int i;
 
-// int main(int argc, char **argv)
-// {
-// 	char	**ret;
-// 	int i;
-//
-// 	i = 0;
-// 	ret = big_split(big_str(argv));
-// 	while (ret[i])
-// 	{
-// 		printf("%s\n", ret[i]);
-// 		i++;
-// 	}
-// }
+	i = 0;
+	ret = big_split(big_str(argv));
+	while (ret[i])
+	{
+		if (!ft_isdigit(ret[i]))
+		{
+			printf("Error\n");
+			return ;
+		}
+		i++;
+	}
+}
+
+int main(int argc, char **argv)
+{
+	char	**ret;
+	int i;
+
+	i = 0;
+	ret = big_split(big_str(argv));
+	while (ret[i])
+	{
+		if (!ft_isdigit(ret[i]))
+		{
+			printf("Error\n");
+			return (0);
+		}
+		i++;
+	}
+	i = 0;
+	while (ret[i])
+	{
+		printf("%ld\n", ft_atoi(ret[i]));
+		i++;
+	}
+}

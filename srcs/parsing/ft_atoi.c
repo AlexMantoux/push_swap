@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 long	ft_atoi(const char *str)
 {
@@ -31,10 +31,6 @@ long	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (sign == 1 && (result * 10 + (str[i] - '0')) < result)
-			return (-1);
-		if (sign == -1 && (result * 10 + (str[i] - '0')) < result)
-			return (0);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
