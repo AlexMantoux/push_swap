@@ -6,18 +6,18 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/13 12:58:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 14:32:27 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-int main (int argc, char **argv)
-{
-    t_list  *lst_a;
-    t_list  *lst_b;
-    int i;
+ int main (int argc, char **argv)
+ {
+     t_list  *lst_a;
+     t_list  *lst_b;
+     int i;
 
     i = 1;
     if (argc > 1)
