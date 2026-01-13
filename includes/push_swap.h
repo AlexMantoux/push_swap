@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/12 15:37:55 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 09:59:17 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void    reverse_rotate_b(t_list **stack_b);
 void    reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 int	find_content_stack(t_list *stack, int n);
 float   compute_disorder(t_list *stack_a);
-int	selection_sort(t_list **stack_a, t_list **stack_b);
+void    selection_sort(t_list **stack_a, t_list **stack_b);
+
 
 #endif

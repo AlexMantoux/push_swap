@@ -6,41 +6,57 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 13:15:21 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/12 16:14:16 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 10:02:08 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	selection_sort(t_list **stack_a, t_list **stack_b)
+int	find_min_pos(t_list *stack)
 {
-	int     i;
-	int     j;
-	int     min_index;
-	int     size;
+	int	min_val;
+	int	min_pos;
+	int	current_pos;
 
-	size = ft_lstsize(*stack_a);
-	i = 0;
-	while (i < size)
+	if (!stack)
+		return (-1);
+	min_val = stack->content;
+	min_pos = 0;
+	current_pos = 0;
+	while (stack)
 	{
-		min_index = i;
-		j = i + 1;
-		while (j < size)
+		if (stack->content < min_val)
 		{
-			if (find_content_stack(*stack_a, j) < find_content_stack(*stack_a, min_index))
-				min_index = j;
-			j++;
+			min_val = stack->content;
+			min_pos = current_pos;
 		}
-		while (min_index > 0)
+		stack = stack->next;
+		current_pos++;
+	}
+	return (min_pos);
+}
+
+void	selection_sort(t_list **stack_a, t_list **stack_b)
+{
+	int	size;
+	int	min_pos;
+
+	while (ft_lstsize(*stack_a) > 0)
+	{
+		size = ft_lstsize(*stack_a);
+		min_pos = find_min_pos(*stack_a);
+		if (min_pos <= size / 2)
 		{
-			rotate_a(stack_a);
-			min_index--;
+			while (min_pos-- > 0)
+				rotate_a(stack_a);
+		}
+		else
+		{
+			while (min_pos++ < size)
+				reverse_rotate_a(stack_a);
 		}
 		push_b(stack_a, stack_b);
-		size--;
-		i++;
 	}
-	while (ft_lstsize(*stack_b) > 0)
+	while (*stack_b)
 		push_a(stack_a, stack_b);
-	return (0);
 }
