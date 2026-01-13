@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 10:54:08 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/13 10:50:12 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/13 11:22:21 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ float	compute_disorder(t_list *stack_a)
 		}
 		i++;
 	}
+	printf("Mistakes: %.0f, Total pairs: %.0f\n", mistakes, total_pairs);
 	return (mistakes / total_pairs);
 }
 

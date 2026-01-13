@@ -1,6 +1,7 @@
 SRC_DIR=srcs
 
 SRC=$(SRC_DIR)/format_d.c\
+	$(SRC_DIR)/format_f.c\
 	$(SRC_DIR)/format_c.c\
 	$(SRC_DIR)/format_p.c\
 	$(SRC_DIR)/format_x.c\

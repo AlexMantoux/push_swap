@@ -30,6 +30,7 @@
              ft_lstadd_back(&lst_a, ft_lstnew((int)ft_atoi(argv[i])));
              i++;
          }
+         ft_printf("Disorder: %f\n", compute_disorder(lst_a));
          ft_lstdisplay(&lst_a, 'a');
          ft_lstdisplay(&lst_b, 'b');
          ft_printf("______________________________\n");
