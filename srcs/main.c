@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/13 14:32:27 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 08:50:45 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,25 @@
 
  int main (int argc, char **argv)
  {
-     t_list  *lst_a;
-     t_list  *lst_b;
-     int i;
+    t_list  *lst_a;
+    t_list  *lst_b;
+    t_flags flags;
+     
+    int i;
 
     i = 1;
     if (argc > 1)
     {
+        parse_flags(argc, argv, &flags);
+        if (flags.simple)
+            ft_printf("Mode simple\n");
+        if (flags.medium)
+            ft_printf("Mode medium\n");
+        if (flags.complex)
+            ft_printf("Mode complex\n");
+        if (flags.bench)
+            ft_printf("Mode bench\n");
+            
         lst_a = ft_lstnew(ft_atoi(argv[i]));
         lst_b = NULL;
         i++;

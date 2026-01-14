@@ -25,6 +25,7 @@ SRC         = $(SRC_DIR)/main.c \
 			  $(PARSING_DIR)/ft_split.c \
 			  $(PARSING_DIR)/ft_strjoin.c \
 			  $(PARSING_DIR)/parsing.c \
+			  $(PARSING_DIR)/flags.c \
 
 
 

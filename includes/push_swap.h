@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/13 09:59:17 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 08:36:49 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 
 # include <unistd.h>
 # include <stdio.h>
+
+typedef struct s_flags {
+    int simple;
+    int medium;
+    int complex;
+    int bench;
+}   t_flags;
+
+void parse_flags(int argc, char **argv, t_flags *flags);
 
 typedef struct s_list
 {
