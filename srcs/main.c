@@ -17,14 +17,14 @@
  {
     t_list  *lst_a;
     t_list  *lst_b;
-    t_flags flags; 
+    t_flags flags;
     int i;
     double disorder;
-    
+
     i = 1;
     if (argc > 1)
     {
-        lst_a = ft_lstnew(ft_atoi(argv[i]));
+        lst_a = ft_lstnew((int)ft_atoi(argv[i]));
         i++;
         lst_b = NULL;
 
@@ -32,7 +32,7 @@
 
         while (argv[i])
         {
-            ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(argv[i])));
+            ft_lstadd_back(&lst_a, ft_lstnew((int)ft_atoi(argv[i])));
             i++;
         }
 
@@ -45,10 +45,10 @@
         if (flags.complex)
             ft_printf("Mode complex\n");
         if (flags.adaptive)
-            adaptive_sort(disorder);
+            adaptive_sort(disorder, lst_a, lst_b);
         if (flags.bench)
             ft_printf("Disorder: %f\n", disorder);
-        
+
         // ft_lstdisplay(&lst_a, 'a');
         // ft_lstdisplay(&lst_b, 'b');
         // ft_printf("______________________________\n");

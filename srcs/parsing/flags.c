@@ -40,7 +40,7 @@ void parse_flags(int argc, char **argv, t_flags *flags)
             flags->medium = 1;
         else if (ft_strcmp(argv[i], "--complex") == 0)
             flags->complex = 1;
-        else if (ft_strcmp(argv[i], "--adaptative") == 0)
+        else if (ft_strcmp(argv[i], "--adaptive") == 0)
             flags->adaptive = 1;
         else if (ft_strcmp(argv[i], "--bench") == 0)
             flags->bench = 1;

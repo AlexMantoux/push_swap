@@ -34,11 +34,11 @@ typedef struct s_list
 }               t_list;
 
 long	ft_atoi(const char *str);
-int	ft_isdigit(const char *str);
+int		ft_isdigit(const char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-int	complete_lst(char **argv, t_list  **lst_a);
+int		complete_lst(char **argv, t_list  **lst_a);
 
 int     ft_lstsize(t_list *lst);
 void    ft_lstadd_front(t_list **lst, t_list *new);
@@ -60,7 +60,7 @@ void    reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 int     find_content_stack(t_list *stack, int n);
 float   compute_disorder(t_list *stack_a);
 void    selection_sort(t_list **stack_a, t_list **stack_b);
-void	adaptive_sort(double disorder);
+void	adaptive_sort(double disorder, t_list *lst_a, t_list *lst_b);
 
 
 

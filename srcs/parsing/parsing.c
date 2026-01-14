@@ -103,6 +103,7 @@ int	complete_lst(char **argv, t_list  **lst_a)
 // int main(int argc, char **argv)
 // {
 // 	(void)argc;
+// 	int		a;
 // 	t_list  *lst_a;
 // 	t_list  *lst_b;
 //
