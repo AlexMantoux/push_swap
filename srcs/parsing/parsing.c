@@ -74,15 +74,16 @@ static int	find_in_lst(t_list *lst_a, int value)
 	return (1);
 }
 
-int	complete_lst(char **argv, t_list	**lst_a, t_flags	**flags)
+int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 {
+	(void)flags;
 	char	**ret;
 	int		i;
 	int		f;
 
 	i = 0;
 	ret = big_split(big_str(argv));
-	f = check_flags(ret[0], flags);
+	f = parse_flags(ret[0], flags);
 	if (!error_check_digits(ret + f))
 		return (0);
 	*lst_a = ft_lstnew((int)ft_atoi(ret[i + f]));
@@ -108,7 +109,7 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	**flags)
 //
 // 	t_list  *lst_a;
 // 	t_list  *lst_b;
-// 	t_flags *flags;
+// 	t_flags flags;
 //
 // 	lst_a = NULL;
 // 	lst_b = NULL;
