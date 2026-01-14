@@ -25,7 +25,8 @@ typedef struct s_flags
 	int	bench;
 }	t_flags;
 
-void	parse_flags(int argc, char **argv, t_flags *flags);
+int	parse_flags(char	*ret, t_flags	*flags);
+int	check_flags(char	*ret, t_flags	*flags);
 
 typedef struct s_list
 {
@@ -38,7 +39,7 @@ int		ft_isdigit(const char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
-int		complete_lst(char **argv, t_list	**lst_a);
+int		complete_lst(char **argv, t_list	**lst_a, t_flags	*flags);
 
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **lst, t_list *new);

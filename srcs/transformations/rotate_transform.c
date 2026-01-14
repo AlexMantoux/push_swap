@@ -13,7 +13,7 @@
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void rotate_a(t_list **stack_a)
+void    rotate_a(t_list **stack_a)
 {
     t_list  *first;
     t_list  *last;

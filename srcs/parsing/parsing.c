@@ -74,48 +74,53 @@ static int	find_in_lst(t_list *lst_a, int value)
 	return (1);
 }
 
-int	complete_lst(char **argv, t_list	**lst_a)
+int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 {
 	char	**ret;
 	int		i;
+	int		f;
 
 	i = 0;
 	ret = big_split(big_str(argv));
-	if (!error_check_digits(ret))
+	f = check_flags(ret[0], flags);
+	if (!error_check_digits(ret + f))
 		return (0);
-	*lst_a = ft_lstnew((int)ft_atoi(ret[i]));
+	*lst_a = ft_lstnew((int)ft_atoi(ret[i + f]));
 	i++;
-	while (ret[i])
+	while (ret[i + f])
 	{
-		if (!find_in_lst(*lst_a, (int)ft_atoi(ret[i])))
+		if (!find_in_lst(*lst_a, (int)ft_atoi(ret[i + f])))
 		{
 			ft_printf("Error\n");
 			return (0);
 		}
-		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i])));
+		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i + f])));
 		i++;
 	}
 	return (1);
 }
 
-// int main(int argc, char **argv)
-// {
-// 	(void)argc;
-// 	int		n;
-// 	t_list  *lst_a;
-// 	t_list  *lst_b;
-//
-// 	lst_a = NULL;
-// 	lst_b = NULL;
-//
-// 	n = complete_lst(argv, &lst_a);
-// 	if (n == 0)
-// 		return (0);
-// 	ft_lstdisplay(&lst_a, 'a');
-// 	ft_lstdisplay(&lst_b, 'b');
-// 	ft_printf("______________________________\n");
-// 	selection_sort(&lst_a, &lst_b);
-// 	ft_lstdisplay(&lst_a, 'a');
-// 	ft_lstdisplay(&lst_b, 'b');
-// 	ft_printf("______________________________\n");
-// }
+int main(int argc, char **argv)
+{
+	if (argc <= 1)
+		return (0);
+	int		n;
+
+	t_list  *lst_a;
+	t_list  *lst_b;
+	t_flags flags;
+
+	lst_a = NULL;
+	lst_b = NULL;
+
+	n = complete_lst(argv, &lst_a, &flags);
+	if (n == 0)
+		return (0);
+	ft_lstdisplay(&lst_a, 'a');
+	ft_lstdisplay(&lst_b, 'b');
+	ft_printf("______________________________\n");
+	selection_sort(&lst_a, &lst_b);
+	ft_lstdisplay(&lst_a, 'a');
+	ft_lstdisplay(&lst_b, 'b');
+	ft_printf("______________________________\n");
+}
