@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:44 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/14 08:50:45 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 09:12:45 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,16 @@
  {
     t_list  *lst_a;
     t_list  *lst_b;
-    t_flags flags;
-     
+    t_flags flags; 
     int i;
-
+    
     i = 1;
     if (argc > 1)
     {
+        lst_a = ft_lstnew(ft_atoi(argv[i]));
+        i++;
+        lst_b = NULL;
+
         parse_flags(argc, argv, &flags);
         if (flags.simple)
             ft_printf("Mode simple\n");
@@ -34,15 +37,14 @@
         if (flags.bench)
             ft_printf("Mode bench\n");
             
-        lst_a = ft_lstnew(ft_atoi(argv[i]));
-        lst_b = NULL;
-        i++;
         while (argv[i])
         {
             ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(argv[i])));
             i++;
         }
-        printf("Disorder: %.2f\n", compute_disorder(lst_a));
+        
+        ft_printf("Disorder: %f\n", compute_disorder(lst_a));
+        
         ft_lstdisplay(&lst_a, 'a');
         ft_lstdisplay(&lst_b, 'b');
         ft_printf("______________________________\n");

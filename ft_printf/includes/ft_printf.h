@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:57:09 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/13 11:25:42 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 08:56:38 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 
 int	format_d(int n);
+int	format_f(double n);
 int	format_u(unsigned int n);
 int	format_x(unsigned long n);
 int	format_x_upper(unsigned long n);

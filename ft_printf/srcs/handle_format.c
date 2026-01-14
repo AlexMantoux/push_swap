@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 09:14:18 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/13 14:35:28 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/14 08:56:17 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	handle_format(const char *c, int i, va_list args)
 		count += format_s(va_arg(args, char *));
 	if (c[i] == 'd' || c[i] == 'i')
 		count += format_d(va_arg(args, int));
+	if (c[i] == 'f')
+		count += format_f(va_arg(args, double));
 	if (c[i] == 'u')
 		count += format_u(va_arg(args, unsigned int));
 	if (c[i] == 'x')
