@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags.c                                            :+:      :+:    :+:   */
+/*   flag.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 08:38:05 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/14 09:43:18 by amantoux         ###   ########.fr       */
+/*   Created: 2026/01/14 12:08:19 by rtrutall          #+#    #+#             */
+/*   Updated: 2026/01/14 12:08:24 by rtrutall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,28 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-void parse_flags(int argc, char **argv, t_flags *flags)
+void	parse_flags(int argc, char	**argv, t_flags	*flags)
 {
-    int i;
+	int	i;
 
-    flags->simple = 0;
-    flags->medium = 0;
-    flags->complex = 0;
-    flags->adaptive = 0;
-    flags->bench = 0;
-    i = 1;
-    while (i < argc)
-    {
-        if (ft_strcmp(argv[i], "--simple") == 0)
-            flags->simple = 1;
-        else if (ft_strcmp(argv[i], "--medium") == 0)
-            flags->medium = 1;
-        else if (ft_strcmp(argv[i], "--complex") == 0)
-            flags->complex = 1;
-        else if (ft_strcmp(argv[i], "--adaptive") == 0)
-            flags->adaptive = 1;
-        else if (ft_strcmp(argv[i], "--bench") == 0)
-            flags->bench = 1;
-        i++;
-    }
+	flags->simple = 0;
+	flags->medium = 0;
+	flags->complex = 0;
+	flags->adaptive = 0;
+	flags->bench = 0;
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_strcmp(argv[i], "--simple") == 0)
+			flags->simple = 1;
+		else if (ft_strcmp(argv[i], "--medium") == 0)
+			flags->medium = 1;
+		else if (ft_strcmp(argv[i], "--complex") == 0)
+			flags->complex = 1;
+		else if (ft_strcmp(argv[i], "--adaptive") == 0)
+			flags->adaptive = 1;
+		else if (ft_strcmp(argv[i], "--bench") == 0)
+			flags->bench = 1;
+		i++;
+	}
 }

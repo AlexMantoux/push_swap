@@ -13,7 +13,7 @@
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-static char *big_str(char **argv)
+static char	*big_str(char **argv)
 {
 	int		i;
 	char	*str;
@@ -38,15 +38,13 @@ static char	**big_split(char const *str)
 	return (ret);
 }
 
-static int	error_check_digits(char **argv)
+static int	error_check_digits(char **ret)
 {
-	char	**ret;
 	int		i;
 	long	n;
 
 	i = 0;
 	n = 0;
-	ret = big_split(big_str(argv));
 	while (ret[i])
 	{
 		if (!ft_isdigit(ret[i]))
@@ -76,14 +74,14 @@ static int	find_in_lst(t_list *lst_a, int value)
 	return (1);
 }
 
-int	complete_lst(char **argv, t_list  **lst_a)
+int	complete_lst(char **argv, t_list	**lst_a)
 {
 	char	**ret;
-	int i;
+	int		i;
 
 	i = 0;
 	ret = big_split(big_str(argv));
-	if (!error_check_digits(argv))
+	if (!error_check_digits(ret))
 		return (0);
 	*lst_a = ft_lstnew((int)ft_atoi(ret[i]));
 	i++;
@@ -103,15 +101,15 @@ int	complete_lst(char **argv, t_list  **lst_a)
 // int main(int argc, char **argv)
 // {
 // 	(void)argc;
-// 	int		a;
+// 	int		n;
 // 	t_list  *lst_a;
 // 	t_list  *lst_b;
 //
 // 	lst_a = NULL;
 // 	lst_b = NULL;
 //
-// 	a = complete_lst(argv, &lst_a);
-// 	if (a == 0)
+// 	n = complete_lst(argv, &lst_a);
+// 	if (n == 0)
 // 		return (0);
 // 	ft_lstdisplay(&lst_a, 'a');
 // 	ft_lstdisplay(&lst_b, 'b');
