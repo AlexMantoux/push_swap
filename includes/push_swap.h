@@ -33,6 +33,8 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	flag_execution(t_flags	flags, t_list	*lst_a, t_list	*lst_b);
+
 long	ft_atoi(const char *str);
 int		ft_isdigit(const char *str);
 char	**ft_split(char const *s, char c);

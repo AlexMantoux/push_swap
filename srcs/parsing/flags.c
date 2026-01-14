@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+#include "../../../ft_printf/ft_printf.h"
 
 static int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -43,4 +44,21 @@ int	parse_flags(char	*ret, t_flags	*flags)
 		|| flags->bench == 1 || flags->adaptive == 1)
 		return (1);
 	return (0);
+}
+
+void	flag_execution(t_flags	flags, t_list	*lst_a, t_list	*lst_b)
+{
+	float	disorder;
+
+	disorder = compute_disorder(lst_a);
+	if (flags.simple)
+		selection_sort(&lst_a, &lst_b);
+	if (flags.medium)
+		ft_printf("Mode medium\n");
+	if (flags.complex)
+		ft_printf("Mode complex\n");
+	if (flags.adaptive)
+		adaptive_sort(disorder, lst_a, lst_b);
+	if (flags.bench)
+		ft_printf("Disorder: %f\n", disorder);
 }
