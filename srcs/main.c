@@ -28,7 +28,7 @@
         i++;
         lst_b = NULL;
 
-        // parse_flags(argc, argv, &flags);
+        parse_flags(argv[1], &flags);
 
         while (argv[i])
         {

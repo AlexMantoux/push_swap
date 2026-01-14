@@ -22,9 +22,9 @@ static int	ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int	check_flags(char	*ret, t_flags	*flags)
+int	check_flags(char	*ret, t_flags	**flags)
 {
-	if (parse_flags(ret, flags))
+	if (parse_flags(ret, *flags))
 		return (1);
 	return (0);
 }

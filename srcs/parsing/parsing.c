@@ -74,7 +74,7 @@ static int	find_in_lst(t_list *lst_a, int value)
 	return (1);
 }
 
-int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
+int	complete_lst(char **argv, t_list	**lst_a, t_flags	**flags)
 {
 	char	**ret;
 	int		i;
@@ -108,7 +108,7 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 //
 // 	t_list  *lst_a;
 // 	t_list  *lst_b;
-// 	t_flags flags;
+// 	t_flags *flags;
 //
 // 	lst_a = NULL;
 // 	lst_b = NULL;
