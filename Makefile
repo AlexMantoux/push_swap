@@ -7,6 +7,9 @@ INC_DIR     = includes
 SRC_DIR     = srcs
 TRANS_DIR   = srcs/transformations
 SIMPLE_ALGO_DIR = srcs/simple_algorithm
+MEDIUM_ALGO_DIR = srcs/medium_algorithm
+COMPLEX_ALGO_DIR = srcs/complex_algorithm
+ADAPTIVE_ALGO_DIR = srcs/adaptive_algorithm
 PARSING_DIR = srcs/parsing
 
 PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
@@ -20,6 +23,9 @@ SRC         = $(SRC_DIR)/main.c \
               $(TRANS_DIR)/rotate_transform.c \
               $(TRANS_DIR)/swap_transform.c \
 			  $(SIMPLE_ALGO_DIR)/selection_sort.c \
+			  $(MEDIUM_ALGO_DIR)/chunk_based_sort.c \
+			  $(COMPLEX_ALGO_DIR)/radix_sort.c \
+			  $(ADAPTIVE_ALGO_DIR)/adaptive_sort.c \
 			  $(PARSING_DIR)/ft_atoi.c \
 			  $(PARSING_DIR)/ft_isdigit.c \
 			  $(PARSING_DIR)/ft_split.c \

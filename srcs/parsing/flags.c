@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 08:38:05 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/14 08:50:53 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 09:43:18 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void parse_flags(int argc, char **argv, t_flags *flags)
     flags->simple = 0;
     flags->medium = 0;
     flags->complex = 0;
+    flags->adaptive = 0;
     flags->bench = 0;
     i = 1;
     while (i < argc)
@@ -39,6 +40,8 @@ void parse_flags(int argc, char **argv, t_flags *flags)
             flags->medium = 1;
         else if (ft_strcmp(argv[i], "--complex") == 0)
             flags->complex = 1;
+        else if (ft_strcmp(argv[i], "--adaptative") == 0)
+            flags->adaptive = 1;
         else if (ft_strcmp(argv[i], "--bench") == 0)
             flags->bench = 1;
         i++;

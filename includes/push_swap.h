@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/14 08:36:49 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/14 09:54:58 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_flags {
     int simple;
     int medium;
     int complex;
+    int adaptive;
     int bench;
 }   t_flags;
 
@@ -56,9 +57,11 @@ void    rotate_a_b(t_list **stack_a, t_list **stack_b);
 void    reverse_rotate_a(t_list **stack_a);
 void    reverse_rotate_b(t_list **stack_b);
 void    reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
-int	find_content_stack(t_list *stack, int n);
+int     find_content_stack(t_list *stack, int n);
 float   compute_disorder(t_list *stack_a);
 void    selection_sort(t_list **stack_a, t_list **stack_b);
+void	adaptive_sort(double disorder);
+
 
 
 #endif
