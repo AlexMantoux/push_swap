@@ -25,7 +25,7 @@ typedef struct s_flags
 	int	bench;
 }	t_flags;
 
-int	parse_flags(char	*ret, t_flags	*flags);
+int		parse_flags(char	*ret, t_flags	*flags);
 
 typedef struct s_list
 {
