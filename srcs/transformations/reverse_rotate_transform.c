@@ -3,59 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_transform.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 09:05:25 by alexmantoux       #+#    #+#             */
-/*   Updated: 2026/01/13 11:13:31 by amantoux         ###   ########.fr       */
+/*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
+/*   Updated: 2026/01/15 16:10:22 by rtrutall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void reverse_rotate_a(t_list **stack_a)
+void	reverse_rotate_a(t_list **stack_a)
 {
-    t_list  *last;
-    t_list  *before_last;
+	t_list	*last;
+	t_list	*before_last;
 
-    if (!stack_a || !*stack_a || !(*stack_a)->next)
-        return ;
-    before_last = NULL;
-    last = *stack_a;
-    while (last->next)
-    {
-        before_last = last;
-        last = last->next;
-    }
-    before_last->next = NULL;
-    last->next = *stack_a;
-    *stack_a = last;
-    ft_printf("rra\n");
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	before_last = NULL;
+	last = *stack_a;
+	while (last->next)
+	{
+		before_last = last;
+		last = last->next;
+	}
+	before_last->next = NULL;
+	last->next = *stack_a;
+	*stack_a = last;
+	ft_printf("rra\n");
 }
 
-void reverse_rotate_b(t_list **stack_b)
+void	reverse_rotate_b(t_list **stack_b)
 {
-    t_list  *last;
-    t_list  *before_last;
+	t_list	*last;
+	t_list	*before_last;
 
-    if (!stack_b || !*stack_b || !(*stack_b)->next)
-        return ;
-    before_last = NULL;
-    last = *stack_b;
-    while (last->next)
-    {
-        before_last = last;
-        last = last->next;
-    }
-    before_last->next = NULL;
-    last->next = *stack_b;
-    *stack_b = last;
-    ft_printf("rrb\n");
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	before_last = NULL;
+	last = *stack_b;
+	while (last->next)
+	{
+		before_last = last;
+		last = last->next;
+	}
+	before_last->next = NULL;
+	last->next = *stack_b;
+	*stack_b = last;
+	ft_printf("rrb\n");
 }
 
-void    reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
+void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
 {
-    reverse_rotate_a(stack_a);
-    reverse_rotate_b(stack_b);
-    ft_printf("rrr\n");
+	reverse_rotate_a(stack_a);
+	reverse_rotate_b(stack_b);
+	ft_printf("rrr\n");
 }

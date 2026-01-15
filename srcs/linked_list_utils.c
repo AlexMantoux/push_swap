@@ -37,7 +37,8 @@ t_list	*ft_lstlast(t_list *lst)
 		current = current->next;
 	return (current);
 }
-void    ft_lstadd_front(t_list **lst, t_list *new)
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;
@@ -77,14 +78,14 @@ void	ft_lstdisplay(t_list **lst, char c)
 	current = *lst;
 	ft_printf("\n");
 	while (current != NULL)
-	{     
+	{
 		ft_printf("%d\n", current->content);
 		// ft_printf("%d", current->content);
 		current = current->next;
 	}
 	ft_printf("_\n");
 	if (c == 'a')
-        ft_printf("a\n");
+		ft_printf("a\n");
 	else
 		ft_printf("b\n");
 }
