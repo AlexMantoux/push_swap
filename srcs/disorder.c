@@ -41,7 +41,6 @@ float	compute_disorder(t_list *stack_a)
 	return (mistakes / total_pairs);
 }
 
-
 int	find_content_stack(t_list *stack, int n)
 {
 	int	i;
