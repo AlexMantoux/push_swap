@@ -6,34 +6,12 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/19 12:09:17 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:45:58 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
-
-void	normalize_indices(t_list *stack)
-{
-	t_list	*current;
-	t_list	*compare;
-	int		rank;
-
-	current = stack;
-	while (current)
-	{
-		rank = 0;
-		compare = stack;
-		while (compare)
-		{
-			if (compare->content < current->content)
-				rank++;
-			compare = compare->next;
-		}
-		current->index = rank;
-		current = current->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -44,14 +22,15 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	lst_b = NULL;
-	int n = 701;
-	for (int i = 0; i < n; i++)
-		printf("Chunk size: %d, i = %d\n", chunk_size(i), i);
 	complete_lst(argv, &lst_a, &flags);
 	flag_execution(flags, lst_a, lst_b);
 	// ft_lstdisplay(&lst_a, 'a');
 	// ft_lstdisplay(&lst_b, 'b');
 	// ft_printf("______________________________\n");
+	ft_lstdisplay(&lst_a, 'a');
+	ft_lstdisplay(&lst_b, 'b');
+	ft_printf("______________________________\n");
+	normalize_indices(lst_a);
 	ft_lstdisplay(&lst_a, 'a');
 	ft_lstdisplay(&lst_b, 'b');
 	ft_printf("______________________________\n");

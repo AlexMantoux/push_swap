@@ -65,5 +65,6 @@ float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b);
 void	adaptive_sort(double disorder, t_list *lst_a, t_list *lst_b);
 int		chunk_size(int size);
+void	normalize_indices(t_list *stack);
 
 #endif
