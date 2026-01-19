@@ -27,6 +27,7 @@ void	adaptive_sort(double disorder, t_list *lst_a, t_list *lst_b)
 	}
 	else
 	{
+		radix_sort(&lst_a, &lst_b);
 		ft_printf("Complex algo");
 	}
 }

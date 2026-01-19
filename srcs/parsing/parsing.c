@@ -99,28 +99,3 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 	}
 	return (1);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	if (argc <= 1)
-// 		return (0);
-// 	int		n;
-//
-// 	t_list  *lst_a;
-// 	t_list  *lst_b;
-// 	t_flags flags;
-//
-// 	lst_a = NULL;
-// 	lst_b = NULL;
-//
-// 	n = complete_lst(argv, &lst_a, &flags);
-// 	if (n == 0)
-// 		return (0);
-// 	ft_lstdisplay(&lst_a, 'a');
-// 	ft_lstdisplay(&lst_b, 'b');
-// 	ft_printf("______________________________\n");
-// 	selection_sort(&lst_a, &lst_b);
-// 	ft_lstdisplay(&lst_a, 'a');
-// 	ft_lstdisplay(&lst_b, 'b');
-// 	ft_printf("______________________________\n");
-// }
