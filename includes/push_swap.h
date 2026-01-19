@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 09:05:42 by amantoux.         #+#    #+#             */
+/*   Created: 2025/12/11 09:05:42 by amantoux         #+#    #+#             */
 /*   Updated: 2026/01/19 11:07:36 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -63,5 +63,6 @@ int		find_content_stack(t_list *stack, int n);
 float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b);
 void	adaptive_sort(double disorder, t_list *lst_a, t_list *lst_b);
+int		chunk_size(int size);
 
 #endif

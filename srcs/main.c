@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/19 11:07:24 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/19 12:09:17 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	lst_b = NULL;
+	int n = 701;
+	for (int i = 0; i < n; i++)
+		printf("Chunk size: %d, i = %d\n", chunk_size(i), i);
 	complete_lst(argv, &lst_a, &flags);
 	flag_execution(flags, lst_a, lst_b);
 	// ft_lstdisplay(&lst_a, 'a');
