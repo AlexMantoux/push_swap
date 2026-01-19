@@ -79,8 +79,9 @@ void	ft_lstdisplay(t_list **lst, char c)
 	ft_printf("\n");
 	while (current != NULL)
 	{
-		ft_printf("%d\n", current->content);
-		// ft_printf("%d", current->content);
+		// ft_printf("%d\n", current->content);
+		ft_printf("%d-->", current->content);
+		ft_printf("%d\n", current->index);
 		current = current->next;
 	}
 	ft_printf("_\n");

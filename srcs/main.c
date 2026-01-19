@@ -13,6 +13,28 @@
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
+void	normalize_indices(t_list *stack)
+{
+	t_list	*current;
+	t_list	*compare;
+	int		rank;
+
+	current = stack;
+	while (current)
+	{
+		rank = 0;
+		compare = stack;
+		while (compare)
+		{
+			if (compare->content < current->content)
+				rank++;
+			compare = compare->next;
+		}
+		current->index = rank;
+		current = current->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;

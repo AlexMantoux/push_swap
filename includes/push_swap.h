@@ -30,6 +30,7 @@ int		parse_flags(char	*ret, t_flags	*flags);
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
 
