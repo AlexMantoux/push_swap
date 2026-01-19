@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag.c                                             :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:08:19 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/14 12:08:24 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/19 10:37:54 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-#include "../../../ft_printf/ft_printf.h"
+#include "../../ft_printf/includes/ft_printf.h"
 
 static int	ft_strcmp(const char *s1, const char *s2)
 {
