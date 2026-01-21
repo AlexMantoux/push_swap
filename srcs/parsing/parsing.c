@@ -84,7 +84,7 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 	ret = big_split(big_str(argv));
 	f = parse_flags(ret[0], flags);
 	if (f)
-		f += test(ret[1], flags);
+		f += check_dooble_flags(ret[1], flags);
 	if (!error_check_digits(ret + f))
 		return (0);
 	*lst_a = ft_lstnew((int)ft_atoi(ret[i + f]));

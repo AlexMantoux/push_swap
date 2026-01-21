@@ -32,6 +32,15 @@ void	flags_init(t_flags	*flags)
 	flags->bench = 0;
 }
 
+int	check_dooble_flags(char	*ret, t_flags	*flags)
+{
+	parse_flags(ret, flags);
+	if (flags->bench && (flags->simple || flags->medium || flags->complex
+			|| flags->adaptive))
+		return (1);
+	return (0);
+}
+
 int	parse_flags(char	*ret, t_flags	*flags)
 {
 	if (ft_strcmp(ret, "--adaptive") == 0)

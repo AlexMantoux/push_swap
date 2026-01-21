@@ -13,15 +13,6 @@
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-int	test(char	*ret, t_flags	*flags)
-{
-	parse_flags(ret, flags);
-	if (flags->bench && (flags->simple || flags->medium || flags->complex
-		|| flags->adaptive))
-		return (1);
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;
