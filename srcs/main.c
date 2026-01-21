@@ -13,6 +13,15 @@
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
+int	test(char	*ret, t_flags	*flags)
+{
+	parse_flags(ret, flags);
+	if (flags->bench && (flags->simple || flags->medium || flags->complex
+		|| flags->adaptive))
+		return (1);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;
@@ -22,6 +31,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	lst_b = NULL;
+	flags_init(&flags);
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (0);
 	if (!compute_disorder(lst_a))
@@ -35,7 +45,7 @@ int	main(int argc, char **argv)
 	// ft_lstdisplay(&lst_a, 'a');
 	// ft_lstdisplay(&lst_b, 'b');
 	// ft_printf("______________________________\n");
-	// normalize_indices(lst_a);
+	// radix_sort(&lst_a, &lst_b);
 	// ft_lstdisplay(&lst_a, 'a');
 	// ft_lstdisplay(&lst_b, 'b');
 	// ft_printf("______________________________\n");

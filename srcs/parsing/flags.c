@@ -23,13 +23,17 @@ static int	ft_strcmp(const char *s1, const char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int	parse_flags(char	*ret, t_flags	*flags)
+void	flags_init(t_flags	*flags)
 {
 	flags->simple = 0;
 	flags->medium = 0;
 	flags->complex = 0;
 	flags->adaptive = 0;
 	flags->bench = 0;
+}
+
+int	parse_flags(char	*ret, t_flags	*flags)
+{
 	if (ft_strcmp(ret, "--adaptive") == 0)
 		flags->adaptive = 1;
 	else if (ft_strcmp(ret, "--simple") == 0)

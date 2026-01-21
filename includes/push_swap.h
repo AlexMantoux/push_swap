@@ -68,4 +68,7 @@ int		chunk_size(int size);
 void	normalize_indices(t_list *stack);
 void	radix_sort(t_list **lst_a, t_list **lst_b);
 
+int	test(char	*ret, t_flags	*flags);
+void	flags_init(t_flags	*flags);
+
 #endif
