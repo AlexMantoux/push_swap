@@ -34,6 +34,18 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+typedef struct s_count_bench
+{
+	int	pa;
+	int	pb;
+	int	sa;
+	int	sb;
+	int	ra;
+	int	rb;
+	int	rra;
+	int	rrb;
+}	t_bench;
+
 void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b);
 
 long	ft_atoi(const char *str);
