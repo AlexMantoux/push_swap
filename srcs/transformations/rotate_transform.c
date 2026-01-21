@@ -13,13 +13,13 @@
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	rotate_a(t_list **stack_a)
+int	rotate_a(t_list **stack_a)
 {
 	t_list	*first;
 	t_list	*last;
 
 	if (!stack_a || !*stack_a || !(*stack_a)->next)
-		return ;
+		return (0);
 	first = *stack_a;
 	*stack_a = first->next;
 	first->next = NULL;
@@ -28,15 +28,16 @@ void	rotate_a(t_list **stack_a)
 		last = last->next;
 	last->next = first;
 	ft_printf("ra\n");
+	return (1);
 }
 
-void	rotate_b(t_list **stack_b)
+int	rotate_b(t_list **stack_b)
 {
 	t_list	*first;
 	t_list	*last;
 
 	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
+		return (0);
 	first = *stack_b;
 	*stack_b = first->next;
 	first->next = NULL;
@@ -45,11 +46,15 @@ void	rotate_b(t_list **stack_b)
 		last = last->next;
 	last->next = first;
 	ft_printf("rb\n");
+	return (1);
 }
 
-void	rotate_a_b(t_list **stack_a, t_list **stack_b)
+int	rotate_a_b(t_list **stack_a, t_list **stack_b)
 {
+	if (!stack_a || !*stack_a)
+		return (0);
 	rotate_a(stack_a);
 	rotate_b(stack_b);
 	ft_printf("rr\n");
+	return (1);
 }

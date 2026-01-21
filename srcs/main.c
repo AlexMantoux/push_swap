@@ -32,10 +32,33 @@ void	ft_lstdisplay(t_list **lst, char c)
 		ft_printf("b\n");
 }
 
+void	init_bench(t_bench *bench)
+{
+	bench->pa = 0;
+	bench->pb = 0;
+	bench->sa = 0;
+	bench->sb = 0;
+	bench->ra = 0;
+	bench->rb = 0;
+	bench->rr = 0;
+	bench->rra = 0;
+	bench->rrb = 0;
+	bench->rrr = 0;
+}
+
+void	display_bench(t_bench *bench)
+{
+	ft_printf("ra = %d\n", bench->ra);
+	ft_printf("rb = %d\n", bench->rb);
+	ft_printf("pa = %d\n", bench->pa);
+	ft_printf("pb = %d\n", bench->pb);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
+	t_bench	bench;
 	t_flags	flags;
 
 	if (argc < 2)
@@ -43,12 +66,13 @@ int	main(int argc, char **argv)
 	lst_a = NULL;
 	lst_b = NULL;
 	flags_init(&flags);
+	init_bench(&bench);
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (0);
 	if (!compute_disorder(lst_a))
 		return (0);
 	normalize_indices(lst_a);
-	flag_execution(flags, &lst_a, &lst_b);
+	flag_execution(flags, &lst_a, &lst_b, &bench);
 	ft_lstdisplay(&lst_a, 'a');
 	ft_lstdisplay(&lst_b, 'b');
 	ft_printf("______________________________\n");

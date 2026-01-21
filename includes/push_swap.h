@@ -42,11 +42,14 @@ typedef struct s_count_bench
 	int	sb;
 	int	ra;
 	int	rb;
+	int	rr;
 	int	rra;
 	int	rrb;
+	int	rrr;
 }	t_bench;
 
-void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b);
+void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
+			t_bench	*bench);
 
 long	ft_atoi(const char *str);
 int		ft_isdigit(const char *str);
@@ -64,23 +67,26 @@ void	ft_lstdisplay(t_list **lst, char c);
 void	swap_a(t_list **lst_a);
 void	swap_b(t_list **lst_b);
 void	swap_a_b(t_list **stack_a, t_list **stack_b);
-void	push_a(t_list **stack_a, t_list **stack_b);
-void	push_b(t_list **stack_a, t_list **stack_b);
-void	rotate_a(t_list **stack_a);
-void	rotate_b(t_list **stack_b);
-void	rotate_a_b(t_list **stack_a, t_list **stack_b);
-void	reverse_rotate_a(t_list **stack_a);
-void	reverse_rotate_b(t_list **stack_b);
-void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
+int		push_a(t_list **stack_a, t_list **stack_b);
+int		push_b(t_list **stack_a, t_list **stack_b);
+int		rotate_a(t_list **stack_a);
+int		rotate_b(t_list **stack_b);
+int		rotate_a_b(t_list **stack_a, t_list **stack_b);
+int		reverse_rotate_a(t_list **stack_a);
+int		reverse_rotate_b(t_list **stack_b);
+int		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 int		find_content_stack(t_list *stack, int n);
 float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b);
-void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b);
+void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
+			t_bench *bench);
 int		chunk_size(int size);
 void	normalize_indices(t_list *stack);
-void	radix_sort(t_list **lst_a, t_list **lst_b);
+void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	*bench);
 
 int		check_dooble_flags(char	*ret, t_flags	*flags);
 void	flags_init(t_flags	*flags);
+
+void	display_bench(t_bench *bench);
 
 #endif

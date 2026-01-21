@@ -13,13 +13,13 @@
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	reverse_rotate_a(t_list **stack_a)
+int	reverse_rotate_a(t_list **stack_a)
 {
 	t_list	*last;
 	t_list	*before_last;
 
 	if (!stack_a || !*stack_a || !(*stack_a)->next)
-		return ;
+		return (0);
 	before_last = NULL;
 	last = *stack_a;
 	while (last->next)
@@ -31,15 +31,16 @@ void	reverse_rotate_a(t_list **stack_a)
 	last->next = *stack_a;
 	*stack_a = last;
 	ft_printf("rra\n");
+	return (1);
 }
 
-void	reverse_rotate_b(t_list **stack_b)
+int	reverse_rotate_b(t_list **stack_b)
 {
 	t_list	*last;
 	t_list	*before_last;
 
 	if (!stack_b || !*stack_b || !(*stack_b)->next)
-		return ;
+		return (0);
 	before_last = NULL;
 	last = *stack_b;
 	while (last->next)
@@ -51,11 +52,15 @@ void	reverse_rotate_b(t_list **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	ft_printf("rrb\n");
+	return (1);
 }
 
-void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
+int	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b)
 {
+	if (!stack_b || !*stack_b)
+		return (0);
 	reverse_rotate_a(stack_a);
 	reverse_rotate_b(stack_b);
 	ft_printf("rrr\n");
+	return (1);
 }

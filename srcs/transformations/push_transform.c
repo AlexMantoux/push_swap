@@ -13,28 +13,30 @@
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	push_a(t_list **stack_a, t_list **stack_b)
+int	push_a(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
 	if (!stack_b || !*stack_b)
-		return ;
+		return (0);
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	ft_printf("pa\n");
+	return (1);
 }
 
-void	push_b(t_list **stack_a, t_list **stack_b)
+int	push_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
 
 	if (!stack_a || !*stack_a)
-		return ;
+		return (0);
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	ft_printf("pb\n");
+	return (1);
 }
