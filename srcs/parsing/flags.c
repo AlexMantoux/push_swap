@@ -40,8 +40,8 @@ int	parse_flags(char	*ret, t_flags	*flags)
 		flags->complex = 1;
 	else if (ft_strcmp(ret, "--bench") == 0)
 		flags->bench = 1;
-	if (flags->simple == 1 || flags->medium == 1 || flags->complex == 1
-		|| flags->bench == 1 || flags->adaptive == 1)
+	if (flags->simple || flags->medium || flags->complex
+		|| flags->bench || flags->adaptive)
 		return (1);
 	return (0);
 }
@@ -56,7 +56,10 @@ void	flag_execution(t_flags	flags, t_list	*lst_a, t_list	*lst_b)
 	else if (flags.medium)
 		ft_printf("Mode medium\n");
 	else if (flags.complex)
+	{
+		ft_printf("Mode complex\n");
 		radix_sort(&lst_a, &lst_b);
+	}
 	else if (flags.bench)
 		ft_printf("Disorder: %f\n", disorder);
 	else
