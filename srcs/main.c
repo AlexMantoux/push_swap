@@ -13,6 +13,25 @@
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
+void	ft_lstdisplay(t_list **lst, char c)
+{
+	t_list	*current;
+
+	current = *lst;
+	ft_printf("\n");
+	while (current != NULL)
+	{
+		ft_printf("%d-->", current->content);
+		ft_printf("%d\n", current->index);
+		current = current->next;
+	}
+	ft_printf("_\n");
+	if (c == 'a')
+		ft_printf("a\n");
+	else
+		ft_printf("b\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;

@@ -33,11 +33,9 @@ int	format_f(double n)
 	long long	int_part;
 	double		frac_part;
 	double		rounding;
-	int			precision;
 	int			count;
 	int			i;
 
-	precision = 2;
 	count = 0;
 	if (n < 0)
 	{
@@ -46,13 +44,13 @@ int	format_f(double n)
 	}
 	rounding = 0.5;
 	i = 0;
-	while (i++ < precision)
+	while (i++ < 2)
 		rounding /= 10;
 	n += rounding;
 	int_part = (long long)n;
 	frac_part = n - int_part;
 	count += format_d(int_part);
 	count += write(1, ".", 1);
-	count += print_fraction(frac_part, precision);
+	count += print_fraction(frac_part, 2);
 	return (count);
 }

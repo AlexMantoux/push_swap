@@ -13,16 +13,16 @@
 #include "../../includes/push_swap.h"
 #include <math.h>
 
-int ft_sqrt(int x)
+int	ft_sqrt(int x)
 {
-	int i;
+	int	i;
 
 	i = 0;
-    if (x < 0)
-        return (-1);
-    if (x == 0)
-        return (0);
-    while (i * i < x)
+	if (x < 0)
+		return (-1);
+	if (x == 0)
+		return (0);
+	while (i * i < x)
 		i++;
 	if (i * i == x)
 		return (i);

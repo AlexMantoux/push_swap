@@ -70,23 +70,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
-void	ft_lstdisplay(t_list **lst, char c)
-{
-	t_list	*current;
-
-	current = *lst;
-	ft_printf("\n");
-	while (current != NULL)
-	{
-		// ft_printf("%d\n", current->content);
-		ft_printf("%d-->", current->content);
-		ft_printf("%d\n", current->index);
-		current = current->next;
-	}
-	ft_printf("_\n");
-	if (c == 'a')
-		ft_printf("a\n");
-	else
-		ft_printf("b\n");
-}
