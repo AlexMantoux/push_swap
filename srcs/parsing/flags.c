@@ -50,19 +50,19 @@ int	parse_flags(char	*ret, t_flags	*flags)
 	return (0);
 }
 
-void	flag_execution(t_flags	flags, t_list	*lst_a, t_list	*lst_b)
+void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b)
 {
 	float	disorder;
 
-	disorder = compute_disorder(lst_a);
+	disorder = compute_disorder(*lst_a);
 	if (flags.simple)
-		selection_sort(&lst_a, &lst_b);
+		selection_sort(lst_a, lst_b);
 	else if (flags.medium)
 		ft_printf("Mode medium\n");
 	else if (flags.complex)
 	{
 		ft_printf("Mode complex\n");
-		radix_sort(&lst_a, &lst_b);
+		radix_sort(lst_a, lst_b);
 	}
 	else if (flags.bench)
 		ft_printf("Disorder: %f\n", disorder);

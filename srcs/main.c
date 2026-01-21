@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
+	lst_a = NULL;
 	lst_b = NULL;
 	flags_init(&flags);
 	if (!complete_lst(argv, &lst_a, &flags))
@@ -37,16 +38,8 @@ int	main(int argc, char **argv)
 	if (!compute_disorder(lst_a))
 		return (0);
 	normalize_indices(lst_a);
-	flag_execution(flags, lst_a, lst_b);
-	// radix_sort(&lst_a, &lst_b);
+	flag_execution(flags, &lst_a, &lst_b);
 	ft_lstdisplay(&lst_a, 'a');
 	ft_lstdisplay(&lst_b, 'b');
 	ft_printf("______________________________\n");
-	// ft_lstdisplay(&lst_a, 'a');
-	// ft_lstdisplay(&lst_b, 'b');
-	// ft_printf("______________________________\n");
-	// radix_sort(&lst_a, &lst_b);
-	// ft_lstdisplay(&lst_a, 'a');
-	// ft_lstdisplay(&lst_b, 'b');
-	// ft_printf("______________________________\n");
 }

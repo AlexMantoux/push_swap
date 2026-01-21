@@ -34,7 +34,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-void	flag_execution(t_flags	flags, t_list	*lst_a, t_list	*lst_b);
+void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b);
 
 long	ft_atoi(const char *str);
 int		ft_isdigit(const char *str);
@@ -63,7 +63,7 @@ void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 int		find_content_stack(t_list *stack, int n);
 float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b);
-void	adaptive_sort(double disorder, t_list *lst_a, t_list *lst_b);
+void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b);
 int		chunk_size(int size);
 void	normalize_indices(t_list *stack);
 void	radix_sort(t_list **lst_a, t_list **lst_b);
