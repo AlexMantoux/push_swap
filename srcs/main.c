@@ -48,10 +48,16 @@ void	init_bench(t_bench *bench)
 
 void	display_bench(t_bench *bench)
 {
-	ft_printf("ra = %d\n", bench->ra);
-	ft_printf("rb = %d\n", bench->rb);
-	ft_printf("pa = %d\n", bench->pa);
-	ft_printf("pb = %d\n", bench->pb);
+	ft_printf("pa = %d     ", bench->pa);
+	ft_printf("pa = %d\n", bench->pb);
+	ft_printf("sa = %d     ", bench->sa);
+	ft_printf("sb = %d\n", bench->sb);
+	ft_printf("ra = %d     ", bench->ra);
+	ft_printf("rb = %d     ", bench->rb);
+	ft_printf("rr = %d\n", bench->rr);
+	ft_printf("ra = %d     ", bench->rra);
+	ft_printf("rb = %d     ", bench->rrb);
+	ft_printf("rrr = %d\n", bench->rrr);
 }
 
 int	main(int argc, char **argv)

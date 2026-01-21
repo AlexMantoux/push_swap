@@ -77,7 +77,7 @@ void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
 	if (flags.bench)
 	{
 		ft_printf("Disorder: %f\n", disorder);
-		ft_printf("test\n");
+		ft_printf("Bench:\n");
 		display_bench(bench);
 	}
 	if (!(flags.simple || flags.medium || flags.complex))
