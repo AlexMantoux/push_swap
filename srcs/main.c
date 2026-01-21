@@ -32,34 +32,6 @@ void	ft_lstdisplay(t_list **lst, char c)
 		ft_printf("b\n");
 }
 
-void	init_bench(t_bench *bench)
-{
-	bench->pa = 0;
-	bench->pb = 0;
-	bench->sa = 0;
-	bench->sb = 0;
-	bench->ra = 0;
-	bench->rb = 0;
-	bench->rr = 0;
-	bench->rra = 0;
-	bench->rrb = 0;
-	bench->rrr = 0;
-}
-
-void	display_bench(t_bench *bench)
-{
-	ft_printf("pa = %d     ", bench->pa);
-	ft_printf("pa = %d\n", bench->pb);
-	ft_printf("sa = %d     ", bench->sa);
-	ft_printf("sb = %d\n", bench->sb);
-	ft_printf("ra = %d     ", bench->ra);
-	ft_printf("rb = %d     ", bench->rb);
-	ft_printf("rr = %d\n", bench->rr);
-	ft_printf("ra = %d     ", bench->rra);
-	ft_printf("rb = %d     ", bench->rrb);
-	ft_printf("rrr = %d\n", bench->rrr);
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;

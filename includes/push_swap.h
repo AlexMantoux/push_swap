@@ -87,6 +87,7 @@ void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	*bench);
 int		check_dooble_flags(char	*ret, t_flags	*flags);
 void	flags_init(t_flags	*flags);
 
+void	init_bench(t_bench *bench);
 void	display_bench(t_bench *bench);
 
 #endif
