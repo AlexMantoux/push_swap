@@ -36,7 +36,7 @@ void	display_bench(t_bench *bench)
 	ft_printf("ra = %d     ", bench->ra);
 	ft_printf("rb = %d     ", bench->rb);
 	ft_printf("rr = %d\n", bench->rr);
-	ft_printf("ra = %d     ", bench->rra);
-	ft_printf("rb = %d     ", bench->rrb);
+	ft_printf("rra = %d     ", bench->rra);
+	ft_printf("rrb = %d     ", bench->rrb);
 	ft_printf("rrr = %d\n", bench->rrr);
 }

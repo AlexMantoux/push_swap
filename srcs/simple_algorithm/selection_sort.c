@@ -36,7 +36,7 @@ int	find_min_pos(t_list *stack)
 	return (min_pos);
 }
 
-void	selection_sort(t_list **stack_a, t_list **stack_b)
+void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	*bench)
 {
 	int	size;
 	int	min_pos;
@@ -48,15 +48,15 @@ void	selection_sort(t_list **stack_a, t_list **stack_b)
 		if (min_pos <= size / 2)
 		{
 			while (min_pos-- > 0)
-				rotate_a(stack_a);
+				bench->ra = rotate_a(stack_a);
 		}
 		else
 		{
 			while (min_pos++ < size)
-				reverse_rotate_a(stack_a);
+				bench->rra = reverse_rotate_a(stack_a);
 		}
-		push_b(stack_a, stack_b);
+		bench->pb = push_b(stack_a, stack_b);
 	}
 	while (*stack_b)
-		push_a(stack_a, stack_b);
+		bench->pa = push_a(stack_a, stack_b);
 }
