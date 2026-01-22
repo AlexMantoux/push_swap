@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 12:49:29 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:05:11 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(int argc, char **argv)
 	lst_b = NULL;
 	flags_init(&flags);
 	init_bench(&bench);
-	// bench.pa = 1;
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (0);
 	if (!compute_disorder(lst_a))
