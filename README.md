@@ -2,7 +2,9 @@
 
 ## Description
 
-Push_swap is a project designed to introduce students to algorithmic complexity, sorting algorithms, and stack manipulation. It marks the first group project in the 42 curriculum.
+Push_swap is a project designed to introduce students to **algorithmic complexity**, **sorting algorithms**, and **stack manipulation**. It marks the first **group project** in the 42 curriculum.
+
+The goal of this project is to sort a stack of integers using a limited set of predefined operations, in the fewest moves possible. To achieve this, students must design and implement differents efficient algorithms that works with two stacks — stack A and stack B — using only operations such as `push`, `swap`, `rotate`, and `reverse rotate`.
 
 ## Instructions
 
@@ -44,15 +46,17 @@ Push_swap is a project designed to introduce students to algorithmic complexity,
 ## Resources
 
 ### References and Documentation
-- [link](https://www.google.com/) — Loremmmmm  
-- [link](https://www.google.com/) — Loremmmmm
 - [link](https://www.google.com/) — Loremmmmm
 
-We use IA to introduce us 
+### IA
 
-## Details
+## Algorithm choices
 
+- **SIMPLE**
 
+- **MEDIUM**
+
+- **COMPLEX**
 
 ### Use of AI
 loremmwermewremwrwerewr IA
