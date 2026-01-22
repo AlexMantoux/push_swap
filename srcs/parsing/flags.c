@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:08:19 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/19 10:37:54 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 10:28:01 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
 	if (flags.simple)
 		selection_sort(lst_a, lst_b, bench);
 	if (flags.medium)
-		ft_printf("Mode medium\n");
+		chunk_based_sort(lst_a, lst_b);
 	if (flags.complex)
 		radix_sort(lst_a, lst_b, bench);
 	if (flags.bench)

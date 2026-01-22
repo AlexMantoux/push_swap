@@ -80,7 +80,9 @@ float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	*bench);
 void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
 			t_bench *bench);
-int		chunk_size(int size);
+
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b);
+
 void	normalize_indices(t_list *stack);
 void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	*bench);
 
