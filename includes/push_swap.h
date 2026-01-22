@@ -50,7 +50,7 @@ typedef struct s_count_bench
 }	t_bench;
 
 void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
-			t_bench	**bench);
+			t_bench	*bench);
 
 long	ft_atoi(const char *str);
 int		ft_isdigit(const char *str);
@@ -78,19 +78,18 @@ int		reverse_rotate_b(t_list **stack_b);
 int		reverse_rotate_a_b(t_list **stack_a, t_list **stack_b);
 int		find_content_stack(t_list *stack, int n);
 float	compute_disorder(t_list *stack_a);
-void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	**bench);
-void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
-			t_bench **bench);
+void	selection_sort(t_list **stack_a, t_list **stack_b);
+void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b);
 
-void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench **bench);
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b);
 
 void	normalize_indices(t_list *stack);
-void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	**bench);
+void	radix_sort(t_list **lst_a, t_list **lst_b);
 
 int		check_dooble_flags(char	*ret, t_flags	*flags);
 void	flags_init(t_flags	*flags);
 
-void	init_bench(t_bench **bench);
-void	display_bench(t_bench **bench, double disorder);
+void	init_bench(t_bench *bench);
+void	display_bench(t_bench *bench, double disorder);
 
 #endif

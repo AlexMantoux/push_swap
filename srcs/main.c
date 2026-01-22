@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 12:05:01 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:17:39 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,21 @@ int	main(int argc, char **argv)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
-	t_bench	**bench;
+	t_bench	bench;
 	t_flags	flags;
 
 	if (argc < 2)
 		return (0);
-	bench = NULL;
 	lst_a = NULL;
 	lst_b = NULL;
 	flags_init(&flags);
-	init_bench(bench);
+	init_bench(&bench);
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (0);
 	if (!compute_disorder(lst_a))
 		return (0);
 	normalize_indices(lst_a);
-	flag_execution(flags, &lst_a, &lst_b, bench);
+	flag_execution(flags, &lst_a, &lst_b, &bench);
 	ft_lstdisplay(&lst_a, 'a');
 	ft_lstdisplay(&lst_b, 'b');
 	ft_printf("______________________________\n");

@@ -6,20 +6,19 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:46:36 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 12:07:44 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:21:54 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
-						t_bench **bench)
+void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b)
 {
 	if (disorder < 0.2)
-		selection_sort(lst_a, lst_b, bench);
+		selection_sort(lst_a, lst_b);
 	else if (disorder >= 0.2 && disorder <= 0.5)
-		chunk_based_sort(lst_a, lst_b, bench);
+		chunk_based_sort(lst_a, lst_b);
 	else
-		radix_sort(lst_a, lst_b, bench);
+		radix_sort(lst_a, lst_b);
 }
