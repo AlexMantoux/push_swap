@@ -15,7 +15,6 @@ PARSING_DIR = srcs/parsing
 PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
 
 SRC         = $(SRC_DIR)/main.c \
-              $(SRC_DIR)/push_swap.c \
               $(SRC_DIR)/disorder.c \
               $(SRC_DIR)/linked_list_utils.c \
 			  $(SRC_DIR)/algorithm_utils.c \

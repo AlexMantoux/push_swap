@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:08:19 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 12:20:24 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:35:26 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,13 +66,13 @@ void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
 
 	disorder = compute_disorder(*lst_a);
 	if (flags.simple)
-		selection_sort(lst_a, lst_b);
+		selection_sort(lst_a, lst_b, bench);
 	if (flags.medium)
-		chunk_based_sort(lst_a, lst_b);
+		chunk_based_sort(lst_a, lst_b, bench);
 	if (flags.complex)
-		radix_sort(lst_a, lst_b);
+		radix_sort(lst_a, lst_b, bench);
 	if (flags.bench)
 		display_bench(bench, disorder);
 	if (!(flags.simple || flags.medium || flags.complex))
-		adaptive_sort(disorder, lst_a, lst_b);
+		adaptive_sort(disorder, lst_a, lst_b, bench);
 }

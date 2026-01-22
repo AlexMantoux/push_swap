@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:27 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 12:19:43 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:33:03 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	chunk_size(int size)
 	return ((sqrt_val * 2) + 10);
 }
 
-static void	move_to_top_b(t_list **stack_b, int pos)
+static void	move_to_top_b(t_list **stack_b, int pos, t_bench *bench)
 {
 	int	size;
 
@@ -48,7 +48,7 @@ static void	move_to_top_b(t_list **stack_b, int pos)
 	{
 		while (pos > 0)
 		{
-			rotate_b(stack_b);
+			rotate_b(stack_b, bench);
 			pos--;
 		}
 	}
@@ -56,7 +56,7 @@ static void	move_to_top_b(t_list **stack_b, int pos)
 	{
 		while (pos < size)
 		{
-			reverse_rotate_b(stack_b);
+			reverse_rotate_b(stack_b, bench);
 			pos++;
 		}
 	}
@@ -86,7 +86,7 @@ static int	find_max_index_pos(t_list *stack)
 	return (max_pos);
 }
 
-void	chunk_based_sort(t_list **stack_a, t_list **stack_b)
+void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
 	int i = 0;
 	int range = chunk_size(ft_lstsize(*stack_a));
@@ -95,22 +95,22 @@ void	chunk_based_sort(t_list **stack_a, t_list **stack_b)
     {
         if ((*stack_a)->index <= i)
         {
-        	push_b(stack_a, stack_b);
-            rotate_b(stack_b);
+        	push_b(stack_a, stack_b, bench);
+            rotate_b(stack_b, bench);
             i++;
         }
         else if ((*stack_a)->index <= i + range)
         {
-            push_b(stack_a, stack_b);
+            push_b(stack_a, stack_b, bench);
             i++;
         }
         else
-            rotate_a(stack_a);
+            rotate_a(stack_a, bench);
     }
 	while (*stack_b)
 	{
     	int max_pos = find_max_index_pos(*stack_b);
-    	move_to_top_b(stack_b, max_pos);
-    	push_a(stack_a, stack_b);
+    	move_to_top_b(stack_b, max_pos, bench);
+    	push_a(stack_a, stack_b, bench);
     }
 }
