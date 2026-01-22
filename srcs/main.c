@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:38:00 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:55:21 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	ft_lstdisplay(t_list **lst, char c)
 	t_list	*current;
 
 	current = *lst;
-	ft_printf("\n");
+	ft_printf(1, "\n");
 	while (current != NULL)
 	{
-		ft_printf("%d-->", current->content);
-		ft_printf("%d\n", current->index);
+		ft_printf(1, "%d-->", current->content);
+		ft_printf(1, "%d\n", current->index);
 		current = current->next;
 	}
-	ft_printf("_\n");
+	ft_printf(1, "_\n");
 	if (c == 'a')
-		ft_printf("a\n");
+		ft_printf(1, "a\n");
 	else
-		ft_printf("b\n");
+		ft_printf(1, "b\n");
 }
 
 int	main(int argc, char **argv)

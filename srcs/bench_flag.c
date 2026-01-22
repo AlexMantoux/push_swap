@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:22:07 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:51:17 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,19 @@ int compute_total_op(t_bench *bench)
 
 void	display_bench(t_bench *bench, double disorder)
 {
-	ft_printf("[bench] disorder:    %f%%\n", disorder * 100);
-	ft_printf("[bench] strategy:    %d\n", 1);
-	ft_printf("[bench] total_ops:    %d\n", compute_total_op(bench));
+	ft_printf(2, "[bench] disorder:    %f%%\n", disorder * 100);
+	ft_printf(2, "[bench] strategy:    %d\n", 1);
+	ft_printf(2, "[bench] total_ops:    %d\n", compute_total_op(bench));
 
-	ft_printf("[bench] sa = %d    ", bench->sa);
-	ft_printf("sb = %d    ", bench->sb);
-	ft_printf("ss = %d    ", bench->ss);
-	ft_printf("pa = %d    ", bench->pa);
-	ft_printf("pb = %d\n", bench->pb);
-	ft_printf("[bench] ra = %d    ", bench->ra);
-	ft_printf("rb = %d    ", bench->rb);
-	ft_printf("rr = %d    ", bench->rr);
-	ft_printf("rra = %d    ", bench->rra);
-	ft_printf("rrb = %d    ", bench->rrb);
-	ft_printf("rrr = %d\n\n", bench->rrr);
+	ft_printf(2, "[bench] sa = %d    ", bench->sa);
+	ft_printf(2, "sb = %d    ", bench->sb);
+	ft_printf(2, "ss = %d    ", bench->ss);
+	ft_printf(2, "pa = %d    ", bench->pa);
+	ft_printf(2, "pb = %d\n", bench->pb);
+	ft_printf(2, "[bench] ra = %d    ", bench->ra);
+	ft_printf(2, "rb = %d    ", bench->rb);
+	ft_printf(2, "rr = %d    ", bench->rr);
+	ft_printf(2, "rra = %d    ", bench->rra);
+	ft_printf(2, "rrb = %d    ", bench->rrb);
+	ft_printf(2, "rrr = %d\n\n", bench->rrr);
 }

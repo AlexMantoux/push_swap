@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 12:59:07 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:52:46 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	rotate_a(t_list **stack_a, t_bench *bench)
 		last = last->next;
 	last->next = first;
 	bench->ra++;
-	ft_printf("ra\n");
+	ft_printf(1, "ra\n");
 }
 
 void	rotate_b(t_list **stack_b, t_bench *bench)
@@ -46,7 +46,7 @@ void	rotate_b(t_list **stack_b, t_bench *bench)
 		last = last->next;
 	last->next = first;
 	bench->rb++;
-	ft_printf("rb\n");
+	ft_printf(1, "rb\n");
 }
 
 void	rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
@@ -55,5 +55,5 @@ void	rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
 		return ;
 	rotate_a(stack_a, bench);
 	rotate_b(stack_b, bench);
-	ft_printf("rr\n");
+	ft_printf(1, "rr\n");
 }

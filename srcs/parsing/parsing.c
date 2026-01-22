@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/13 13:13:24 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:52:07 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ static int	error_check_digits(char **ret)
 	{
 		if (!ft_isdigit(ret[i]))
 		{
-			ft_printf("Error\n");
+			ft_printf(2, "Error\n");
 			return (0);
 		}
 		n = ft_atoi(ret[i]);
 		if (n > 2147483647 || n < -2147483648)
 		{
-			ft_printf("Error\n");
+			ft_printf(2, "Error\n");
 			return (0);
 		}
 		i++;
@@ -93,7 +93,7 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 	{
 		if (!find_in_lst(*lst_a, (int)ft_atoi(ret[i + f])))
 		{
-			ft_printf("Error\n");
+			ft_printf(2, "Error\n");
 			return (0);
 		}
 		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i + f])));

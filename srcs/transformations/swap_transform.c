@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:12:25 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:52:56 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	swap_a(t_list **stack_a, t_bench *bench)
 	second->next = first;
 	*stack_a = second;
 	bench->sa++;
-	ft_printf("sa\n");
+	ft_printf(1, "sa\n");
 }
 
 void	swap_b(t_list **stack_b, t_bench *bench)
@@ -42,12 +42,12 @@ void	swap_b(t_list **stack_b, t_bench *bench)
 	second->next = first;
 	*stack_b = second;
 	bench->sb++;
-	ft_printf("sb\n");
+	ft_printf(1, "sb\n");
 }
 
 void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
 	swap_a(stack_a, bench);
 	swap_b(stack_b, bench);
-	ft_printf("ss\n");
+	ft_printf(1, "ss\n");
 }

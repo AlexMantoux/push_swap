@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:57:00 by amantoux          #+#    #+#             */
-/*   Updated: 2025/11/21 08:49:34 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:42:27 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	format_c(char c)
+int	format_c(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 	return (1);
 }

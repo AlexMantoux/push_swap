@@ -6,13 +6,13 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:14:55 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/12 11:10:08 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:50:42 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	ft_printf(const char *c, ...)
+int	ft_printf(int fd, const char *c, ...)
 {
 	va_list	args;
 	int		i;
@@ -28,12 +28,12 @@ int	ft_printf(const char *c, ...)
 		if (c[i] == '%' && c[i + 1])
 		{
 			i++;
-			count += handle_format(c, i, args);
+			count += handle_format(c, i, args, fd);
 		}
 		else
 		{
 			count++;
-			format_c(c[i]);
+			format_c(c[i], 1);
 		}
 		i++;
 	}

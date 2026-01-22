@@ -6,13 +6,13 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 11:24:53 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 11:58:57 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:44:32 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	print_fraction(double frac_part, int precision)
+int	print_fraction(double frac_part, int precision, int fd)
 {
 	int	count;
 	int	digit;
@@ -22,13 +22,13 @@ int	print_fraction(double frac_part, int precision)
 	{
 		frac_part *= 10;
 		digit = (int)frac_part;
-		count += write(1, &"0123456789"[digit], 1);
+		count += write(fd, &"0123456789"[digit], 1);
 		frac_part -= digit;
 	}
 	return (count);
 }
 
-int	format_f(double n)
+int	format_f(double n, int fd)
 {
 	long long	int_part;
 	double		frac_part;
@@ -39,7 +39,7 @@ int	format_f(double n)
 	count = 0;
 	if (n < 0)
 	{
-		count += write(1, "-", 1);
+		count += write(fd, "-", 1);
 		n = -n;
 	}
 	rounding = 0.5;
@@ -49,8 +49,8 @@ int	format_f(double n)
 	n += rounding;
 	int_part = (long long)n;
 	frac_part = n - int_part;
-	count += format_d(int_part);
-	count += write(1, ".", 1);
-	count += print_fraction(frac_part, 2);
+	count += format_d(int_part, fd);
+	count += write(fd, ".", 1);
+	count += print_fraction(frac_part, 2, fd);
 	return (count);
 }
