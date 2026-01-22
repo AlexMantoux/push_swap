@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   swap_transform.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/15 16:13:41 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:29:29 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	swap_a(t_list **stack_a)
+void	swap_a(t_list **stack_a, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*second;
@@ -25,10 +25,11 @@ void	swap_a(t_list **stack_a)
 	first->next = second->next;
 	second->next = first;
 	*stack_a = second;
+	bench->sa++;
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_list **stack_b)
+void	swap_b(t_list **stack_b, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*second;
@@ -40,12 +41,13 @@ void	swap_b(t_list **stack_b)
 	first->next = second->next;
 	second->next = first;
 	*stack_b = second;
+	bench->sb++;
 	ft_printf("sb\n");
 }
 
-void	swap_a_b(t_list **stack_a, t_list **stack_b)
+void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
-	swap_a(stack_a);
-	swap_b(stack_b);
+	swap_a(stack_a, bench);
+	swap_b(stack_b, bench);
 	ft_printf("ss\n");
 }
