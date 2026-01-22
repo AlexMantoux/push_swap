@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:05:03 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:22:07 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	display_bench(t_bench *bench, double disorder)
 	ft_printf("rrb = %d    ", bench->rrb);
 	ft_printf("rrr = %d\n\n", bench->rrr);
 }
-

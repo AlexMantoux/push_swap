@@ -77,7 +77,6 @@ void	reverse_rotate_a(t_list **stack_a, t_bench *bench);
 void	reverse_rotate_b(t_list **stack_b, t_bench *bench);
 void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench);
 
-int		find_content_stack(t_list *stack, int n);
 float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench *bench);
 void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b, t_bench *bench);

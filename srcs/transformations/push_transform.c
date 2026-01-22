@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 12:58:33 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:12:49 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	bench->pa++;
+	ft_printf("pa (bench->pa = %d)\n", bench->pa);
 	ft_printf("pa\n");
 }
 

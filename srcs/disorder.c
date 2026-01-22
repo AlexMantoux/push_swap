@@ -6,11 +6,27 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 10:54:08 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/14 08:29:14 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:32:17 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+
+static int	find_content_stack(t_list *stack, int n)
+{
+	int	i;
+
+	i = 0;
+	if (n > ft_lstsize(stack))
+		return (0);
+	while (i < n)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (stack->content);
+}
 
 float	compute_disorder(t_list *stack_a)
 {
@@ -41,17 +57,3 @@ float	compute_disorder(t_list *stack_a)
 	return (mistakes / total_pairs);
 }
 
-int	find_content_stack(t_list *stack, int n)
-{
-	int	i;
-
-	i = 0;
-	if (n > ft_lstsize(stack))
-		return (0);
-	while (i < n)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (stack->content);
-}
