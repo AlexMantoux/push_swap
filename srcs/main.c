@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 14:04:47 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:10:27 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,12 @@ int	main(int argc, char **argv)
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (0);
 	disorder = compute_disorder(lst_a);
-	ft_lstdisplay(&lst_a, 'a');
-	ft_lstdisplay(&lst_b, 'b');
 	if (disorder == 0)
 		return (0);
 	normalize_indices(lst_a);
 	flag_execution(flags, &lst_a, &lst_b, &bench);
 	ft_lstdisplay(&lst_a, 'a');
 	ft_lstdisplay(&lst_b, 'b');
-	display_bench(&bench, disorder);
+	if (flags.bench)
+		display_bench(&bench, disorder);
 }

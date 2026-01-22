@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 15:00:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:14:20 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void	get_algo_name(t_bench *bench)
 	{
 		ft_printf(1, "Adaptive / ");
 		if (bench->complexity == 's')
-			ft_printf(1, "O(n)");
+			ft_printf(1, "O(n²)");
 		else if (bench->complexity == 'm')
-			ft_printf(1, "O(n.sqrt(n))");
+			ft_printf(1, "O(n√(n))");
 		else if (bench->complexity == 'c')
 			ft_printf(1, "O(n.log(n))");
 	}
@@ -66,7 +66,7 @@ void	get_algo_name(t_bench *bench)
 		if (bench->complexity == 's')
 			ft_printf(1, "Simple / O(n)");
 		else if (bench->complexity == 'm')
-			ft_printf(1, "Medium / O(n.sqrt(n))");
+			ft_printf(1, "Medium / O(nsqrt(n))");
 		else if (bench->complexity == 'c')
 			ft_printf(1, "Complex / O(n.log(n))");
 	}
