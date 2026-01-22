@@ -40,6 +40,7 @@ typedef struct s_count_bench
 	int	pb;
 	int	sa;
 	int	sb;
+	int	ss;
 	int	ra;
 	int	rb;
 	int	rr;

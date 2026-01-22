@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:46:36 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/14 09:56:49 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:40:21 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,10 @@
 void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
 						t_bench *bench)
 {
-	ft_printf("%f\n", disorder);
 	if (disorder < 0.2)
-	{
 		selection_sort(lst_a, lst_b, bench);
-		ft_printf("simple algo");
-	}
 	else if (disorder >= 0.2 && disorder <= 0.5)
-	{
-		ft_printf("Medium algo");
-	}
+		chunk_based_sort(lst_a, lst_b);
 	else
 		radix_sort(lst_a, lst_b, bench);
 }

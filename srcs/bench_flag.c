@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_flag.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/21 17:40:43 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:41:26 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init_bench(t_bench *bench)
 	bench->pb = 0;
 	bench->sa = 0;
 	bench->sb = 0;
+	bench->ss = 0;
 	bench->ra = 0;
 	bench->rb = 0;
 	bench->rr = 0;
@@ -29,14 +30,19 @@ void	init_bench(t_bench *bench)
 
 void	display_bench(t_bench *bench)
 {
-	ft_printf("pa = %d     ", bench->pa);
-	ft_printf("pa = %d\n", bench->pb);
-	ft_printf("sa = %d     ", bench->sa);
-	ft_printf("sb = %d\n", bench->sb);
-	ft_printf("ra = %d     ", bench->ra);
-	ft_printf("rb = %d     ", bench->rb);
-	ft_printf("rr = %d\n", bench->rr);
-	ft_printf("rra = %d     ", bench->rra);
-	ft_printf("rrb = %d     ", bench->rrb);
+	ft_printf("[bench] disorder:    %d%%\n", 1);
+	ft_printf("[bench] strategy:    %d\n", 1);
+	ft_printf("[bench] total_ops:    %d\n", 1);
+
+	ft_printf("[bench] sa = %d    ", bench->sa);
+	ft_printf("sb = %d    ", bench->sb);
+	ft_printf("ss = %d    ", bench->ss);
+	ft_printf("pa = %d    ", bench->pa);
+	ft_printf("pb = %d\n", bench->pb);
+	ft_printf("[bench] ra = %d    ", bench->ra);
+	ft_printf("rb = %d    ", bench->rb);
+	ft_printf("rr = %d    ", bench->rr);
+	ft_printf("rra = %d    ", bench->rra);
+	ft_printf("rrb = %d    ", bench->rrb);
 	ft_printf("rrr = %d\n", bench->rrr);
 }
