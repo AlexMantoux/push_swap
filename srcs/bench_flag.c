@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 15:14:20 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 15:17:21 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,22 @@ void	get_algo_name(t_bench *bench)
 {
 	if (bench->adaptive == 1)
 	{
-		ft_printf(1, "Adaptive / ");
+		ft_printf(2, "Adaptive / ");
 		if (bench->complexity == 's')
-			ft_printf(1, "O(n²)");
+			ft_printf(2, "O(n²)");
 		else if (bench->complexity == 'm')
-			ft_printf(1, "O(n√(n))");
+			ft_printf(2, "O(n√(n))");
 		else if (bench->complexity == 'c')
-			ft_printf(1, "O(n.log(n))");
+			ft_printf(2, "O(n.log(n))");
 	}
 	else
 	{
 		if (bench->complexity == 's')
-			ft_printf(1, "Simple / O(n)");
+			ft_printf(2, "Simple / O(n)");
 		else if (bench->complexity == 'm')
-			ft_printf(1, "Medium / O(nsqrt(n))");
+			ft_printf(2, "Medium / O(nsqrt(n))");
 		else if (bench->complexity == 'c')
-			ft_printf(1, "Complex / O(n.log(n))");
+			ft_printf(2, "Complex / O(n.log(n))");
 	}
 }
 
