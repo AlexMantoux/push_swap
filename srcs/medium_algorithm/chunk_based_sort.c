@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:27 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 12:33:03 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:47:11 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static void	move_to_top_b(t_list **stack_b, int pos, t_bench *bench)
 			pos++;
 		}
 	}
+	bench->algo = 'm';
 }
 
 static int	find_max_index_pos(t_list *stack)

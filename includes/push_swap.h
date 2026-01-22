@@ -47,6 +47,7 @@ typedef struct s_count_bench
 	int	rra;
 	int	rrb;
 	int	rrr;
+	char algo;
 }	t_bench;
 
 void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,

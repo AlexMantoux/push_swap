@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:24 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 12:33:38 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:46:22 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench *bench)
 			push_a(lst_a, lst_b, bench);
 		i++;
 	}
+	bench->algo = 'c';
 }

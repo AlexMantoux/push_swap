@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:51:17 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:49:10 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	init_bench(t_bench *bench)
 	bench->rra = 0;
 	bench->rrb = 0;
 	bench->rrr = 0;
+	bench->algo = '0';
 }
 
 int compute_total_op(t_bench *bench)
@@ -47,12 +48,24 @@ int compute_total_op(t_bench *bench)
 	return (total);
 }
 
+void	get_algo_name(t_bench *bench)
+{
+	if (bench->algo == 's')
+		ft_printf(1, "Simple / ");
+	else if (bench->algo == 'm')
+		ft_printf(1, "Medium / ");
+	else if (bench->algo == 'c')
+		ft_printf(1, "Complex / ");
+	else if (bench->algo == 'a')
+		ft_printf(1, "Adaptive / ");
+}
+
 void	display_bench(t_bench *bench, double disorder)
 {
 	ft_printf(2, "[bench] disorder:    %f%%\n", disorder * 100);
-	ft_printf(2, "[bench] strategy:    %d\n", 1);
-	ft_printf(2, "[bench] total_ops:    %d\n", compute_total_op(bench));
-
+	ft_printf(2, "[bench] strategy:    ");
+	get_algo_name(bench);
+	ft_printf(2, "\n[bench] total_ops:    %d\n", compute_total_op(bench));
 	ft_printf(2, "[bench] sa = %d    ", bench->sa);
 	ft_printf(2, "sb = %d    ", bench->sb);
 	ft_printf(2, "ss = %d    ", bench->ss);
