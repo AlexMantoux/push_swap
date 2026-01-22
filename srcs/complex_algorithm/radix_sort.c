@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:24 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 10:17:57 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:09:07 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	get_max_bits(int max_index)
 	return (max_bits);
 }
 
-void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	*bench)
+void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	**bench)
 {
 	int	i;
 	int	j;
@@ -39,13 +39,13 @@ void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench	*bench)
 		while (j < max_index)
 		{
 			if ((((*lst_a)->index >> i) & 1) == 1)
-				bench->ra += rotate_a(lst_a);
+				(*bench)->ra += rotate_a(lst_a);
 			else
-				bench->pb += push_b(lst_a, lst_b);
+				(*bench)->pb += push_b(lst_a, lst_b);
 			j++;
 		}
 		while (*lst_b)
-			bench->pa += push_a(lst_a, lst_b);
+			(*bench)->pa += push_a(lst_a, lst_b);
 		i++;
 	}
 }

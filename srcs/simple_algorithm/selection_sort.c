@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 13:15:21 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/13 10:02:08 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:03:20 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	find_min_pos(t_list *stack)
 	return (min_pos);
 }
 
-void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	*bench)
+void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	**bench)
 {
 	int	size;
 	int	min_pos;
@@ -48,15 +48,15 @@ void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench	*bench)
 		if (min_pos <= size / 2)
 		{
 			while (min_pos-- > 0)
-				bench->ra = rotate_a(stack_a);
+				(*bench)->ra += rotate_a(stack_a);
 		}
 		else
 		{
 			while (min_pos++ < size)
-				bench->rra = reverse_rotate_a(stack_a);
+				(*bench)->rra += reverse_rotate_a(stack_a);
 		}
-		bench->pb = push_b(stack_a, stack_b);
+		(*bench)->pb += push_b(stack_a, stack_b);
 	}
 	while (*stack_b)
-		bench->pa = push_a(stack_a, stack_b);
+		(*bench)->pa += push_a(stack_a, stack_b);
 }
