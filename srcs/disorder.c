@@ -6,12 +6,11 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 10:54:08 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 13:32:17 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/26 09:58:29 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 static int	find_content_stack(t_list *stack, int n)
 {
@@ -56,4 +55,3 @@ float	compute_disorder(t_list *stack_a)
 	}
 	return (mistakes / total_pairs);
 }
-

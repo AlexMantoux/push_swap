@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:27 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 14:54:16 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/26 10:05:03 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,29 +89,28 @@ static int	find_max_index_pos(t_list *stack)
 
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
-	int i = 0;
-	int range = chunk_size(ft_lstsize(*stack_a));
+	int	i;
 
+	i = 0;
 	while (*stack_a)
-    {
-        if ((*stack_a)->index <= i)
-        {
-        	push_b(stack_a, stack_b, bench);
-            rotate_b(stack_b, bench);
-            i++;
-        }
-        else if ((*stack_a)->index <= i + range)
-        {
-            push_b(stack_a, stack_b, bench);
-            i++;
-        }
-        else
-            rotate_a(stack_a, bench);
-    }
+	{
+		if ((*stack_a)->index <= i)
+		{
+			push_b(stack_a, stack_b, bench);
+			rotate_b(stack_b, bench);
+			i++;
+		}
+		else if ((*stack_a)->index <= i + chunk_size(ft_lstsize(*stack_a)))
+		{
+			push_b(stack_a, stack_b, bench);
+			i++;
+		}
+		else
+			rotate_a(stack_a, bench);
+	}
 	while (*stack_b)
 	{
-    	int max_pos = find_max_index_pos(*stack_b);
-    	move_to_top_b(stack_b, max_pos, bench);
-    	push_a(stack_a, stack_b, bench);
-    }
+		move_to_top_b(stack_b, find_max_index_pos(*stack_b), bench);
+		push_a(stack_a, stack_b, bench);
+	}
 }

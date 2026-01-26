@@ -36,19 +36,19 @@ typedef struct s_list
 
 typedef struct s_count_bench
 {
-	int	pa;
-	int	pb;
-	int	sa;
-	int	sb;
-	int	ss;
-	int	ra;
-	int	rb;
-	int	rr;
-	int	rra;
-	int	rrb;
-	int	rrr;
-	int adaptive;
-	char complexity;
+	int		pa;
+	int		pb;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	int		adaptive;
+	char	complexity;
 }	t_bench;
 
 void	flag_execution(t_flags	flags, t_list	**lst_a, t_list	**lst_b,
@@ -81,7 +81,8 @@ void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench);
 
 float	compute_disorder(t_list *stack_a);
 void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench *bench);
-void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b, t_bench *bench);
+void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
+			t_bench *bench);
 
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench *bench);
 
