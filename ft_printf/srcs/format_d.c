@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:00:04 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 13:43:50 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/27 10:56:49 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ int	format_d(int n, int fd)
 	}
 	if (n < 0)
 	{
-		format_c('-', fd);
+		format_c(fd, '-');
 		n *= -1;
 		count++;
 	}
 	if (n < 10)
 	{
-		format_c(n + '0', fd);
+		format_c(fd, n + '0');
 		return (count);
 	}
 	count += format_d(n / 10, fd);
-	format_c((n % 10) + '0', fd);
+	format_c(fd, (n % 10) + '0');
 	return (count);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:14:55 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 13:50:42 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/27 10:43:29 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_printf(int fd, const char *c, ...)
 		else
 		{
 			count++;
-			format_c(c[i], 1);
+			format_c(fd, c[i]);
 		}
 		i++;
 	}

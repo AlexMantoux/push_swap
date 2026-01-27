@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:57:09 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 13:50:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/27 10:51:02 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	format_u(unsigned int n, int fd);
 int	format_x(unsigned long n, int fd);
 int	format_x_upper(unsigned long n, int fd);
 int	format_p(void *p, int fd);
-int	format_c(char c, int fd);
+int	format_c(int fd, char c);
 int	format_s(char *str, int fd);
 int	format_f(double f, int fd);
 int	handle_format(const char *c, int i, va_list args, int fd);
