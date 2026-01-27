@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/27 10:52:01 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:04:11 by rtrutall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ int	main(int argc, char **argv)
 	if (disorder == 0)
 		return (0);
 	normalize_indices(lst_a);
-	flag_execution(flags, &lst_a, &lst_b, &bench);
-	// ft_lstdisplay(&lst_a, 'a');
+	if (ft_lstsize(lst_a) <= 3)
+		hard_sort(&lst_a, &bench);
+	else
+		flag_execution(flags, &lst_a, &lst_b, &bench);
+	ft_lstdisplay(&lst_a, 'a');
 	if (flags.bench)
 		display_bench(&bench, disorder);
 }

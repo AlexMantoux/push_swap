@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/27 09:51:33 by rtrutall          #+#    #+#             */
+/*   Updated: 2026/01/27 14:21:02 by rtrutall         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by amantoux         #+#    #+#             */
@@ -87,6 +99,7 @@ void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench *bench);
 
 void	normalize_indices(t_list *stack);
+void	hard_sort(t_list **lst_a, t_bench *bench);
 void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench *bench);
 
 int		check_dooble_flags(char	*ret, t_flags	*flags);
