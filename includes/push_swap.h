@@ -99,7 +99,7 @@ void	adaptive_sort(double disorder, t_list **lst_a, t_list **lst_b,
 void	chunk_based_sort(t_list **stack_a, t_list **stack_b, t_bench *bench);
 
 void	normalize_indices(t_list *stack);
-void	hard_sort(t_list **lst_a, t_bench *bench);
+void	hard_sort(t_list **lst_a, t_bench *bench, t_flags flags);
 void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench *bench);
 
 int		check_dooble_flags(char	*ret, t_flags	*flags);

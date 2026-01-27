@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		return (0);
 	normalize_indices(lst_a);
 	if (ft_lstsize(lst_a) <= 3)
-		hard_sort(&lst_a, &bench);
+		hard_sort(&lst_a, &bench, flags);
 	else
 		flag_execution(flags, &lst_a, &lst_b, &bench);
 	ft_lstdisplay(&lst_a, 'a');

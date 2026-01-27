@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/26 09:57:58 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/27 14:44:41 by rtrutall         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	get_algo_name(t_bench *bench)
 	else
 	{
 		if (bench->complexity == 's')
-			ft_printf(2, "Simple / O(n)");
+			ft_printf(2, "Simple / O(n²)");
 		else if (bench->complexity == 'm')
 			ft_printf(2, "Medium / O(nsqrt(n))");
 		else if (bench->complexity == 'c')
