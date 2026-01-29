@@ -10,6 +10,7 @@ The goal of this project is to sort a stack of integers using a limited set of p
 
 - `make` to compile the project
 - `./push_swap` `flags` `stack` to execute. (flags aren't necessary)
+- `norminette && make re && shuf -i 1-500 -n 100 > test.txt; valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap $(cat test.txt) | ../../../Downloads/checker_linux $(cat test.txt) && make fclean && rm test.txt`
 
 - Flags could be :
 
@@ -60,3 +61,10 @@ The goal of this project is to sort a stack of integers using a limited set of p
 
 ### Use of AI
 loremmwermewremwrwerewr IA
+
+## Checker
+
+``` bash 
+echo "\n+++++++++++++ NORMINETTE +++++++++++++\n" && norminette && echo "\n+++++++++++++ COMPILE +++++++++++++\n" && make re && shuf -i 1-500 -n 100 > test.txt; echo "\n+++++++++++++ VALGRIND / EXEC +++++++++++++\n" && valgrind ./push_swap $(cat test.txt) && echo "\n+++++++++++++ CHECKER +++++++++++++\n" && echo "TEST -> \c"; ./push_swap $(cat test.txt) | ../../../Downloads/checker_linux $(cat test.txt) && echo "\n+++++++++++++ CLEAN UP +++++++++++++\n" && make fclean && rm test.txt
+```
+command that check norminette errors, compile project, generate list of different numbers in a file `test.txt` that will be used as an argument by `./push_swap` and `./checker_linux`. Valgrind, execute the project and clean up all.
