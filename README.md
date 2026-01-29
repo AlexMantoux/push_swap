@@ -28,7 +28,6 @@ The goal of this project is to sort a stack of integers using a limited set of p
 ## Contributions
 
 **Amantoux**
-
 - Stack operations
 - Simple algorithm
 - Medium algorithm
