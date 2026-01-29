@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 11:14:49 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:22:54 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,14 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 
 	i = 0;
 	big_string = big_str(argv);
+	if (!big_string)
+		return (0);
 	ret = big_split(big_string);
+	if (!ret)
+	{
+		free(big_string);
+		return (0);
+	}
 	f = parse_flags(ret[0], flags);
 	if (f)
 		f += check_dooble_flags(ret[1], flags);
