@@ -3,23 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:46:27 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/12 10:46:44 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:11:21 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../../includes/push_swap.h"
 
-static void	free_tab(char **tab)
+void	free_tab(char **tab)
 {
 	int	i;
 
 	i = 0;
 	while (tab[i])
-		free(tab[i++]);
+	{
+		free(tab[i]);
+		i++;
+	}
 	free(tab);
 }
 

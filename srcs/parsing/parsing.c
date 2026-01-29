@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:52:07 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:14:49 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,22 @@ static int	find_in_lst(t_list *lst_a, int value)
 int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 {
 	char	**ret;
+	char	*big_string;
 	int		i;
 	int		f;
 
 	i = 0;
-	ret = big_split(big_str(argv));
+	big_string = big_str(argv);
+	ret = big_split(big_string);
 	f = parse_flags(ret[0], flags);
 	if (f)
 		f += check_dooble_flags(ret[1], flags);
 	if (!error_check_digits(ret + f))
+	{
+		free_tab(ret);
+		free(big_string);
 		return (0);
+	}
 	*lst_a = ft_lstnew((int)ft_atoi(ret[i + f]));
 	i++;
 	while (ret[i + f])
@@ -94,10 +100,15 @@ int	complete_lst(char **argv, t_list	**lst_a, t_flags	*flags)
 		if (!find_in_lst(*lst_a, (int)ft_atoi(ret[i + f])))
 		{
 			ft_printf(2, "Error\n");
+			free_tab(ret);
+			free(big_string);
+			ft_lstclear(lst_a);
 			return (0);
 		}
 		ft_lstadd_back(lst_a, ft_lstnew((int)ft_atoi(ret[i + f])));
 		i++;
 	}
+	free_tab(ret);
+	free(big_string);
 	return (1);
 }

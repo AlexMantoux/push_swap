@@ -3,22 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 09:51:33 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/27 14:21:02 by rtrutall         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 09:05:42 by amantoux         #+#    #+#             */
-/*   Updated: 2026/01/19 11:07:36 by amantoux         ###   ########.fr       */
+/*   Created: 2025/12/11 09:05:42 by amantoux          #+#    #+#             */
+/*   Updated: 2026/01/29 10:18:28 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 typedef struct s_flags
 {
@@ -107,5 +96,8 @@ void	flags_init(t_flags	*flags);
 
 void	init_bench(t_bench *bench);
 void	display_bench(t_bench *bench, double disorder);
+
+void	free_tab(char **tab);
+void	ft_lstclear(t_list **lst);
 
 #endif
