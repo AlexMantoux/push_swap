@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:31:23 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/27 14:43:07 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:55:58 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void	hard_sort(t_list **lst_a, t_bench *bench, t_flags flags)
 		bench->adaptive = 1;
 		bench->complexity = 's';
 	}
-
 	if (ft_lstsize(*lst_a) == 2)
 		swap_a(lst_a, bench);
 	else

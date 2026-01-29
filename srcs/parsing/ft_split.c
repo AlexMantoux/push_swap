@@ -6,27 +6,12 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:46:27 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 13:42:48 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:57:13 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../../includes/push_swap.h"
-
-void	free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	if (!tab)
-		return ;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-}
 
 static int	is_charset(char c, char charset)
 {

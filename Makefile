@@ -19,6 +19,7 @@ SRC         = $(SRC_DIR)/main.c \
               $(SRC_DIR)/linked_list_utils.c \
 			  $(SRC_DIR)/algorithm_utils.c \
 			  $(SRC_DIR)/bench_flag.c \
+			  $(SRC_DIR)/free_utils.c \
               $(TRANS_DIR)/push_transform.c \
               $(TRANS_DIR)/reverse_rotate_transform.c \
               $(TRANS_DIR)/rotate_transform.c \
@@ -32,6 +33,7 @@ SRC         = $(SRC_DIR)/main.c \
 			  $(PARSING_DIR)/ft_split.c \
 			  $(PARSING_DIR)/ft_strjoin.c \
 			  $(PARSING_DIR)/parsing.c \
+			  $(PARSING_DIR)/parsing_utils.c \
 			  $(PARSING_DIR)/flags.c \
 
 

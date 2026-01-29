@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/29 10:18:28 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:12:12 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,11 @@ void	display_bench(t_bench *bench, double disorder);
 
 void	free_tab(char **tab);
 void	ft_lstclear(t_list **lst);
+
+char	*big_str(char **argv);
+char	**big_split(char const *str);
+int		error_check_digits(char **ret);
+int		find_in_lst(t_list *lst_a, int value);
+size_t	ft_strlen_dup(const char *s);
 
 #endif

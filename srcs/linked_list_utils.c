@@ -6,13 +6,12 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:51:30 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/29 11:59:10 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:59:39 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
-#include <stdlib.h>
 
 t_list	*ft_lstnew(int content)
 {
@@ -69,19 +68,4 @@ int	ft_lstsize(t_list *lst)
 		current = current->next;
 	}
 	return (count);
-}
-
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*tmp;
-
-	if (!lst)
-		return ;
-	while (*lst != NULL)
-	{
-		tmp = *lst;
-		*lst = (*lst)->next;
-		free(tmp);
-	}
-	lst = NULL;
 }

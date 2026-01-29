@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtrutall <rtrutall@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 09:51:13 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/13 09:51:19 by rtrutall         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:12:32 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 #include <stdlib.h>
 
-static size_t	ft_strlen(const char *s)
+size_t	ft_strlen_dup(const char *s)
 {
 	size_t	i;
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	ret = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	ret = malloc(sizeof(char) * (ft_strlen_dup(s1) + ft_strlen_dup(s2)) + 1);
 	if (!ret)
 		return (NULL);
 	while (s1[i])
