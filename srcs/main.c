@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 11:58:51 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 13:40:22 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int	main(int argc, char **argv)
 	if (flags.bench)
 		display_bench(&bench, disorder);
 	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 	return (1);
 }

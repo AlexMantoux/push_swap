@@ -6,30 +6,62 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 11:50:48 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:07:11 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-static char	*big_str(char **argv)
+static size_t	ft_strlen_dup(const char *s)
 {
-	int		i;
-	char	*str;
-	char	*tmp;
+	size_t	i;
 
-	i = 1;
-	str = argv[i];
-	i++;
-	while (argv[i])
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	size_t	i;
+	size_t	len;
+	char	*ret;
+
+	len = ft_strlen_dup(s1);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (i < len)
 	{
-		tmp = ft_strjoin(str, " ");
-		str = ft_strjoin(tmp, argv[i]);
-		free(tmp);
+		ret[i] = s1[i];
 		i++;
 	}
-	return (str);
+	ret[i] = '\0';
+	return (ret);
+}
+
+static char	*big_str(char **argv)
+{
+	char	*result;
+	char	*temp;
+	int		i;
+
+	result = ft_strdup("");
+	i = 1;
+	while (argv[i])
+	{
+		temp = ft_strjoin(result, " ");
+		free(result);
+		result = temp;
+		temp = ft_strjoin(result, argv[i]);
+		free(result);
+		result = temp;
+		i++;
+	}
+	return (result);
 }
 
 static char	**big_split(char const *str)
