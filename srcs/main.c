@@ -6,14 +6,15 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 15:33:51 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 16:20:58 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-void	push_swap(t_list *lst_a, t_list *lst_b, t_bench bench, t_flags flags)
+static void	push_swap(t_list *lst_a, t_list *lst_b,
+	t_bench bench, t_flags flags)
 {
 	float	disorder;
 
