@@ -6,30 +6,27 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 13:40:22 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 15:33:51 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-void	ft_lstdisplay(t_list **lst, char c)
+void	push_swap(t_list *lst_a, t_list *lst_b, t_bench bench, t_flags flags)
 {
-	t_list	*current;
+	float	disorder;
 
-	current = *lst;
-	ft_printf(1, "\n");
-	while (current != NULL)
-	{
-		ft_printf(1, "%d-->", current->content);
-		ft_printf(1, "%d\n", current->index);
-		current = current->next;
-	}
-	ft_printf(1, "_\n");
-	if (c == 'a')
-		ft_printf(1, "a\n");
+	disorder = compute_disorder(lst_a);
+	normalize_indices(lst_a);
+	if (ft_lstsize(lst_a) <= 3)
+		hard_sort(&lst_a, &bench, flags);
 	else
-		ft_printf(1, "b\n");
+		flag_execution(flags, &lst_a, &lst_b, &bench);
+	if (flags.bench)
+		display_bench(&bench, disorder);
+	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 }
 
 int	main(int argc, char **argv)
@@ -41,27 +38,19 @@ int	main(int argc, char **argv)
 	float	disorder;
 
 	if (argc < 2)
-		return (0);
+		return (1);
 	lst_a = NULL;
 	lst_b = NULL;
 	flags_init(&flags);
 	init_bench(&bench);
 	if (!complete_lst(argv, &lst_a, &flags))
-		return (0);
+		return (1);
 	disorder = compute_disorder(lst_a);
 	if (disorder == 0)
 	{
 		ft_lstclear(&lst_a);
-		return (0);
+		return (1);
 	}
-	normalize_indices(lst_a);
-	if (ft_lstsize(lst_a) <= 3)
-		hard_sort(&lst_a, &bench, flags);
-	else
-		flag_execution(flags, &lst_a, &lst_b, &bench);
-	if (flags.bench)
-		display_bench(&bench, disorder);
-	ft_lstclear(&lst_a);
-	ft_lstclear(&lst_b);
-	return (1);
+	push_swap(lst_a, lst_b, bench, flags);
+	return (0);
 }
