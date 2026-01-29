@@ -11,15 +11,11 @@ MEDIUM_ALGO_DIR = srcs/medium_algorithm
 COMPLEX_ALGO_DIR = srcs/complex_algorithm
 ADAPTIVE_ALGO_DIR = srcs/adaptive_algorithm
 PARSING_DIR = srcs/parsing
+UTILS_DIR = srcs/utils
 
 PRINTF_LIB  = $(PRINTF_DIR)/libftprintf.a
 
 SRC         = $(SRC_DIR)/main.c \
-              $(SRC_DIR)/disorder.c \
-              $(SRC_DIR)/linked_list_utils.c \
-			  $(SRC_DIR)/algorithm_utils.c \
-			  $(SRC_DIR)/bench_flag.c \
-			  $(SRC_DIR)/free_utils.c \
               $(TRANS_DIR)/push_transform.c \
               $(TRANS_DIR)/reverse_rotate_transform.c \
               $(TRANS_DIR)/rotate_transform.c \
@@ -35,8 +31,11 @@ SRC         = $(SRC_DIR)/main.c \
 			  $(PARSING_DIR)/parsing.c \
 			  $(PARSING_DIR)/parsing_utils.c \
 			  $(PARSING_DIR)/flags.c \
-
-
+			  $(PARSING_DIR)/bench_flag.c \
+			  $(UTILS_DIR)/linked_list_utils.c \
+			  $(UTILS_DIR)/algorithm_utils.c \
+			  $(UTILS_DIR)/free_utils.c \
+			  $(UTILS_DIR)/disorder.c \
 
 OBJ         = $(SRC:.c=.o)
 DEPS        = $(SRC:.c=.d)
