@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 10:09:14 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 11:22:54 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:50:48 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ static char	*big_str(char **argv)
 {
 	int		i;
 	char	*str;
+	char	*tmp;
 
 	i = 1;
 	str = argv[i];
 	i++;
 	while (argv[i])
 	{
-		str = ft_strjoin(str, " ");
-		str = ft_strjoin(str, argv[i]);
+		tmp = ft_strjoin(str, " ");
+		str = ft_strjoin(tmp, argv[i]);
+		free(tmp);
 		i++;
 	}
 	return (str);
