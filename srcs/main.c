@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/29 16:20:58 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 07:16:43 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (1);
 	disorder = compute_disorder(lst_a);
-	if (disorder == 0)
+	if (disorder == 0 && !flags.bench)
 	{
 		ft_lstclear(&lst_a);
 		return (1);
