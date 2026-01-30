@@ -74,6 +74,7 @@ To achieve the highest score, the program does not blindly apply an algorithm ba
 - Disorder
 - benchmark mode
 - Readme
+- Checker
 
 **Rtrutall**
 - Parsing of arguments

@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 12:08:19 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 15:10:00 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 08:37:41 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-static int	ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
 

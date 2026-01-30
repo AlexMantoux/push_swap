@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/29 16:19:52 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 08:37:59 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_count_bench
 size_t	ft_strlen_dup(const char *s);
 int		ft_isdigit(const char *str);
 int		error_check_digits(char **ret);
+int		ft_strcmp(const char *s1, const char *s2);
 long	ft_atoi(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*big_str(char **argv);
