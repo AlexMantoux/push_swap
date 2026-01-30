@@ -32,8 +32,10 @@ static int	validate_input(char **ret, t_flags *flags, char *big_string)
 	int	f;
 
 	f = parse_flags(ret[0], flags);
-	if (f)
+	if (f && ret[1])
 		f += check_dooble_flags(ret[1], flags);
+	if (!ret[f])
+		return (-1);
 	if (!error_check_digits(ret + f))
 	{
 		free_tab(ret);
@@ -73,11 +75,13 @@ int	complete_lst(char **argv, t_list **lst_a, t_flags *flags)
 	char	**ret;
 	char	*big_string;
 	int		f;
+	int		i;
 
 	if (!init_parsing(argv, &ret, &big_string))
 		return (0);
 	f = validate_input(ret, flags, big_string);
-	if (f == -1)
+	i = ft_count_strings(ret);
+	if (f == -1 || f + 1 >= i)
 		return (0);
 	if (!populate_list(ret, f, lst_a))
 	{

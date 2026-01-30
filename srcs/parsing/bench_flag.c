@@ -90,3 +90,15 @@ void	display_bench(t_bench *bench, double disorder)
 	ft_printf(2, "rrb = %d    ", bench->rrb);
 	ft_printf(2, "rrr = %d\n", bench->rrr);
 }
+
+int	ft_count_strings(char **ret)
+{
+	int	i;
+
+	i = 0;
+	if (!ret)
+		return (0);
+	while (ret[i] != NULL)
+		i++;
+	return (i);
+}

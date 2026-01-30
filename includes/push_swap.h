@@ -59,6 +59,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*big_str(char **argv);
 char	**big_split(char const *str);
 char	**ft_split(char const *s, char c);
+int		ft_count_strings(char **ret);
 int		find_in_lst(t_list *lst_a, int value);
 int		complete_lst(char **argv, t_list	**lst_a, t_flags	*flags);
 
