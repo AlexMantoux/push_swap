@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:32:58 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/30 07:58:51 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:45:18 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strdup_gnl(const char *s1)
 	return (ret);
 }
 
-char	*ft_strchr_gnl(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
 		return (NULL);
@@ -86,4 +86,22 @@ char	*ft_strjoin_gnl(const char *s1, const char *s2)
 	}
 	ret[i + j] = '\0';
 	return (ret);
+}
+
+char	*init_read(char *rest, char **buf, ssize_t *readed)
+{
+	char	*tmp;
+
+	*buf = malloc(BUFFER_SIZE + 1);
+	if (!*buf)
+		return (NULL);
+	tmp = ft_strdup_gnl(rest);
+	if (!tmp)
+	{
+		free(*buf);
+		*buf = NULL;
+		return (NULL);
+	}
+	*readed = 1;
+	return (tmp);
 }

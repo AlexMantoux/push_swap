@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 13:15:21 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 14:54:31 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:30:42 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	int	size;
 	int	min_pos;
 
-	while (ft_lstsize(*stack_a) > 0)
+	while (ft_lstsize(*stack_a) > 2)
 	{
 		size = ft_lstsize(*stack_a);
 		min_pos = find_min_pos(*stack_a);
@@ -57,6 +57,8 @@ void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench *bench)
 		}
 		push_b(stack_a, stack_b, bench);
 	}
+	if ((*stack_a)->content > (*stack_a)->next->content)
+		swap_a(stack_a, bench);
 	while (*stack_b)
 		push_a(stack_a, stack_b, bench);
 	bench->complexity = 's';

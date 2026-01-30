@@ -7,8 +7,8 @@ PRINTF_DIR  = ft_printf
 INC_DIR     = includes
 SRC_DIR     = srcs
 TRANS_DIR   = srcs/transformations
-GNL_DIR     = gnl
 BONUS_DIR	= bonus
+GNL_DIR     = bonus/gnl
 SIMPLE_ALGO_DIR = srcs/simple_algorithm
 MEDIUM_ALGO_DIR = srcs/medium_algorithm
 COMPLEX_ALGO_DIR = srcs/complex_algorithm
@@ -44,7 +44,6 @@ SRC_BONUS   = $(GNL_DIR)/get_next_line.c \
               $(GNL_DIR)/get_next_line_utils.c \
 			  $(filter-out $(SRC_DIR)/main.c, $(SRC)) \
 			  $(BONUS_DIR)/main.c
-			  
 
 OBJ         = $(SRC:.c=.o)
 OBJ_BONUS   = $(SRC_BONUS:.c=.o)

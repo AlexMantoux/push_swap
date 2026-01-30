@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 13:32:56 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/30 07:58:19 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:45:27 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ char	*ft_get_line(char *buf);
 void	ft_get_rest(char *rest, char *buf);
 size_t	ft_strlen_gnl(const char *s);
 char	*ft_strdup_gnl(const char *s1);
-char	*ft_strchr_gnl(const char *s, int c);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin_gnl(const char *s1, const char *s2);
+char	*init_read(char *rest, char **buf, ssize_t *readed);
 
 #endif

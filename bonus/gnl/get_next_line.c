@@ -5,44 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 13:32:54 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/30 07:58:02 by amantoux         ###   ########.fr       */
+/*   Created: 2025/12/08 14:42:38 by amantoux          #+#    #+#             */
+/*   Updated: 2026/01/30 10:45:38 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+
+char	*join_buffer(char *tmp, char *buf, ssize_t readed)
+{
+	char	*joined;
+
+	buf[readed] = '\0';
+	joined = ft_strjoin_gnl(tmp, buf);
+	free(tmp);
+	return (joined);
+}
 
 char	*read_and_join(int fd, char *rest)
 {
 	char		*buf;
 	char		*tmp;
-	char		*joined;
 	ssize_t		readed;
 
-	buf = malloc(BUFFER_SIZE + 1);
-	if (!buf)
+	tmp = init_read(rest, &buf, &readed);
+	if (!tmp)
 		return (NULL);
-	readed = 1;
-	tmp = rest;
-	while (!ft_strchr_gnl(tmp, '\n') && readed > 0)
+	while (!ft_strchr(tmp, '\n') && readed > 0)
 	{
 		readed = read(fd, buf, BUFFER_SIZE);
 		if (readed < 0)
 		{
 			free(buf);
+			free(tmp);
 			return (NULL);
 		}
-		buf[readed] = '\0';
-		joined = ft_strjoin_gnl(tmp, buf);
-		if (!joined)
+		tmp = join_buffer(tmp, buf, readed);
+		if (!tmp)
 		{
 			free(buf);
 			return (NULL);
 		}
-		if (tmp != rest)
-			free(tmp);
-		tmp = joined;
 	}
 	free(buf);
 	return (tmp);
@@ -95,34 +98,37 @@ void	ft_get_rest(char *rest, char *buf)
 	rest[j] = '\0';
 }
 
-char    *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-    static char rest[BUFFER_SIZE + 1] = {0};
-    char        *bigbuf;
-    char        *line;
+	static char	rest[BUFFER_SIZE + 1] = {0};
+	char		*bigbuf;
+	char		*line;
 
-    if (fd < 0 || BUFFER_SIZE < 1)
-        return (NULL);
-
-    bigbuf = read_and_join(fd, rest);
-    if (!bigbuf)
-        return (NULL);
-
-    line = ft_get_line(bigbuf);
-    ft_get_rest(rest, bigbuf);
-
-	if (bigbuf != rest)
-        free(bigbuf);
-
-    return (line);
+	if (fd < 0 || BUFFER_SIZE < 1)
+		return (NULL);
+	bigbuf = read_and_join(fd, rest);
+	if (!bigbuf)
+	{
+		rest[0] = '\0';
+		return (NULL);
+	}
+	line = ft_get_line(bigbuf);
+	if (!line)
+	{
+		free(bigbuf);
+		rest[0] = '\0';
+		return (NULL);
+	}
+	ft_get_rest(rest, bigbuf);
+	free(bigbuf);
+	return (line);
 }
 
-
+// #include <stdio.h>
 // int main(void)
 // {
 // 	int     fd;
 // 	char    *line;
-// 	int     i = 1;
 
 // 	fd = open("test", O_RDONLY);
 // 	if (fd < 0)
@@ -130,27 +136,11 @@ char    *get_next_line(int fd)
 // 		perror("open");
 // 		return (1);
 // 	}
-
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 		line = get_next_line(fd);
-// 	printf("%s", line);
-// 		line = get_next_line(fd);
-// 	printf("%s", line);
-// 		line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
-// 	i++;
-
+// 	while ((line = get_next_line(fd)) != NULL)
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 	}
 // 	close(fd);
 // 	return (0);
-
-// 	// char rest[42];
-// 	// char *line;
-// 	// char str[42] = "abcdefgh\nijkl";
-
-// 	// line = get_line(str);
-// 	// printf("%s\n", line);
-// 	// get_rest(rest, str);
-// 	// printf("%s\n", rest);
 // }
