@@ -40,7 +40,7 @@ static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 		reverse_rotate_a_b(lst_a, lst_b, &bench);
 }
 
-int	final_check(t_list *lst_a, t_list *lst_b)
+static int	final_check(t_list *lst_a, t_list *lst_b)
 {
 	if (lst_b != NULL)
 		return (0);

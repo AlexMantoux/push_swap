@@ -30,7 +30,7 @@ void	init_bench(t_bench *bench)
 	bench->complexity = '0';
 }
 
-int	compute_total_op(t_bench *bench)
+static int	compute_total_op(t_bench *bench)
 {
 	int	total;
 
@@ -49,7 +49,7 @@ int	compute_total_op(t_bench *bench)
 	return (total);
 }
 
-void	get_algo_name(t_bench *bench)
+static void	get_algo_name(t_bench *bench)
 {
 	if (bench->adaptive == 1)
 	{

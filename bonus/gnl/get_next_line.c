@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*join_buffer(char *tmp, char *buf, ssize_t readed)
+static char	*join_buffer(char *tmp, char *buf, ssize_t readed)
 {
 	char	*joined;
 
@@ -22,7 +22,7 @@ char	*join_buffer(char *tmp, char *buf, ssize_t readed)
 	return (joined);
 }
 
-char	*read_and_join(int fd, char *rest)
+static char	*read_and_join(int fd, char *rest)
 {
 	char		*buf;
 	char		*tmp;
@@ -123,24 +123,3 @@ char	*get_next_line(int fd)
 	free(bigbuf);
 	return (line);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	int     fd;
-// 	char    *line;
-
-// 	fd = open("test", O_RDONLY);
-// 	if (fd < 0)
-// 	{
-// 		perror("open");
-// 		return (1);
-// 	}
-// 	while ((line = get_next_line(fd)) != NULL)
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 	}
-// 	close(fd);
-// 	return (0);
-// }

@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-int	find_min_pos(t_list *stack)
+static int	find_min_pos(t_list *stack)
 {
 	int	min_val;
 	int	min_pos;
