@@ -35,7 +35,11 @@ static int	validate_input(char **ret, t_flags *flags, char *big_string)
 	if (f && ret[1])
 		f += check_dooble_flags(ret[1], flags);
 	if (!ret[f])
+	{
+		free_tab(ret);
+		free(big_string);
 		return (-1);
+	}
 	if (!error_check_digits(ret + f))
 	{
 		free_tab(ret);
