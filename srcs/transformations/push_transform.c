@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:52:23 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/31 06:38:05 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
 {
 	t_list	*tmp;
 
@@ -24,10 +24,11 @@ void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	bench->pa++;
-	ft_printf(1, "pa\n", 1);
+	if (print)
+		ft_printf(1, "pa\n", 1);
 }
 
-void	push_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	push_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
 {
 	t_list	*tmp;
 
@@ -38,5 +39,6 @@ void	push_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	bench->pb++;
-	ft_printf(1, "pb\n");
+	if (print)
+		ft_printf(1, "pb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/30 10:14:33 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/31 06:49:59 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,27 @@
 static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 {
 	if (ft_strcmp("sa\n", line) == 0)
-		swap_a(lst_a, &bench);
+		swap_a(lst_a, &bench, 0);
 	else if (ft_strcmp("sb\n", line) == 0)
-		swap_b(lst_b, &bench);
+		swap_b(lst_b, &bench, 0);
 	else if (ft_strcmp("ss\n", line) == 0)
-		swap_a_b(lst_a, lst_b, &bench);
+		swap_a_b(lst_a, lst_b, &bench, 0);
 	else if (ft_strcmp("pa\n", line) == 0)
-		push_a(lst_a, lst_b, &bench);
+		push_a(lst_a, lst_b, &bench, 0);
 	else if (ft_strcmp("pb\n", line) == 0)
-		push_b(lst_a, lst_b, &bench);
+		push_b(lst_a, lst_b, &bench, 0);
 	else if (ft_strcmp("ra\n", line) == 0)
-		rotate_a(lst_a, &bench);
+		rotate_a(lst_a, &bench, 0);
 	else if (ft_strcmp("rb\n", line) == 0)
-		rotate_b(lst_b, &bench);
+		rotate_b(lst_b, &bench, 0);
 	else if (ft_strcmp("rr\n", line) == 0)
-		rotate_a_b(lst_a, lst_b, &bench);
+		rotate_a_b(lst_a, lst_b, &bench, 0);
 	else if (ft_strcmp("rra\n", line) == 0)
-		reverse_rotate_a(lst_a, &bench);
+		reverse_rotate_a(lst_a, &bench, 0);
 	else if (ft_strcmp("rrb\n", line) == 0)
-		reverse_rotate_b(lst_b, &bench);
+		reverse_rotate_b(lst_b, &bench, 0);
 	else if (ft_strcmp("rrr\n", line) == 0)
-		reverse_rotate_a_b(lst_a, lst_b, &bench);
+		reverse_rotate_a_b(lst_a, lst_b, &bench, 0);
 }
 
 static int	final_check(t_list *lst_a, t_list *lst_b)

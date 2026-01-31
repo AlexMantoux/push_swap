@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/22 13:52:37 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/31 06:39:18 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	reverse_rotate_a(t_list **stack_a, t_bench *bench)
+void	reverse_rotate_a(t_list **stack_a, t_bench *bench, int print)
 {
 	t_list	*last;
 	t_list	*before_last;
@@ -31,10 +31,11 @@ void	reverse_rotate_a(t_list **stack_a, t_bench *bench)
 	last->next = *stack_a;
 	*stack_a = last;
 	bench->rra++;
-	ft_printf(1, "rra\n");
+	if (print)
+		ft_printf(1, "rra\n");
 }
 
-void	reverse_rotate_b(t_list **stack_b, t_bench *bench)
+void	reverse_rotate_b(t_list **stack_b, t_bench *bench, int print)
 {
 	t_list	*last;
 	t_list	*before_last;
@@ -52,14 +53,16 @@ void	reverse_rotate_b(t_list **stack_b, t_bench *bench)
 	last->next = *stack_b;
 	*stack_b = last;
 	bench->rrb++;
-	ft_printf(1, "rrb\n");
+	if (print)
+		ft_printf(1, "rrb\n");
 }
 
-void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
+void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
 {
 	if (!stack_b || !*stack_b)
 		return ;
-	reverse_rotate_a(stack_a, bench);
-	reverse_rotate_b(stack_b, bench);
-	ft_printf(1, "rrr\n");
+	reverse_rotate_a(stack_a, bench, 1);
+	reverse_rotate_b(stack_b, bench, 1);
+	if (print)
+		ft_printf(1, "rrr\n");
 }

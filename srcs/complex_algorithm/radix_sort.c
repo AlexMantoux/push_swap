@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:24 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/22 14:54:21 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/31 06:44:30 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	radix_sort(t_list **lst_a, t_list **lst_b, t_bench *bench)
 		while (j < max_index)
 		{
 			if ((((*lst_a)->index >> i) & 1) == 1)
-				rotate_a(lst_a, bench);
+				rotate_a(lst_a, bench, 1);
 			else
-				push_b(lst_a, lst_b, bench);
+				push_b(lst_a, lst_b, bench, 1);
 			j++;
 		}
 		while (*lst_b)
-			push_a(lst_a, lst_b, bench);
+			push_a(lst_a, lst_b, bench, 1);
 		i++;
 	}
 	bench->complexity = 'c';
