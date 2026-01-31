@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/31 06:49:59 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/01/31 06:41:53 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (1);
 	line = get_next_line(0);
-	while (line > 0)
+	while (line != NULL)
 	{
 		apply_op(&lst_a, &lst_b, line, bench);
 		free(line);
