@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/31 06:40:23 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:18:41 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,45 @@ void	rotate_b(t_list **stack_b, t_bench *bench, int print)
 		ft_printf(1, "rb\n");
 }
 
+static void	rotate_a_bis(t_list **stack_a)
+{
+	t_list	*first;
+	t_list	*last;
+
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	first = *stack_a;
+	*stack_a = first->next;
+	first->next = NULL;
+	last = *stack_a;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+}
+
+static void	rotate_b_bis(t_list **stack_b)
+{
+	t_list	*first;
+	t_list	*last;
+
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	first = *stack_b;
+	*stack_b = first->next;
+	first->next = NULL;
+	last = *stack_b;
+	while (last->next)
+		last = last->next;
+	last->next = first;
+}
+
 void	rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
 {
 	if (!stack_a || !*stack_a)
 		return ;
-	rotate_a(stack_a, bench, 1);
-	rotate_b(stack_b, bench, 1);
+	rotate_a_bis(stack_a);
+	rotate_b_bis(stack_b);
+	bench->rr++;
 	if (print)
 		ft_printf(1, "rr\n");
 }

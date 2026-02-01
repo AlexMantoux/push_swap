@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/31 06:39:18 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:16:53 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,51 @@ void	reverse_rotate_b(t_list **stack_b, t_bench *bench, int print)
 		ft_printf(1, "rrb\n");
 }
 
+static void	reverse_rotate_a_bis(t_list **stack_a)
+{
+	t_list	*last;
+	t_list	*before_last;
+
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	before_last = NULL;
+	last = *stack_a;
+	while (last->next)
+	{
+		before_last = last;
+		last = last->next;
+	}
+	before_last->next = NULL;
+	last->next = *stack_a;
+	*stack_a = last;
+}
+
+static void	reverse_rotate_b_bis(t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*before_last;
+
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
+		return ;
+	before_last = NULL;
+	last = *stack_b;
+	while (last->next)
+	{
+		before_last = last;
+		last = last->next;
+	}
+	before_last->next = NULL;
+	last->next = *stack_b;
+	*stack_b = last;
+}
+
 void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
 {
 	if (!stack_b || !*stack_b)
 		return ;
-	reverse_rotate_a(stack_a, bench, 1);
-	reverse_rotate_b(stack_b, bench, 1);
+	reverse_rotate_a_bis(stack_a);
+	reverse_rotate_b_bis(stack_b);
+	bench->rrr++;
 	if (print)
 		ft_printf(1, "rrr\n");
 }

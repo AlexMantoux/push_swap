@@ -6,13 +6,19 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/31 10:45:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/01 17:08:39 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "gnl/get_next_line.h"
 #include "../../ft_printf/includes/ft_printf.h"
+
+static void error_quit()
+{
+	ft_printf(2, "Error\n");
+	exit(1);
+}
 
 static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 {
@@ -38,6 +44,8 @@ static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 		reverse_rotate_b(lst_b, &bench, 0);
 	else if (ft_strcmp("rrr\n", line) == 0)
 		reverse_rotate_a_b(lst_a, lst_b, &bench, 0);
+	else
+		error_quit();
 }
 
 static int	final_check(t_list *lst_a, t_list *lst_b)
@@ -65,7 +73,7 @@ int	main(int argc, char **argv)
 	char	*line;
 
 	init_bench(&bench);
-	if (argc < 2)
+	if (argc < 3)
 		return (1);
 	lst_a = NULL;
 	lst_b = NULL;
