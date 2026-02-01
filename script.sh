@@ -7,6 +7,7 @@ NC='\033[0m'
 
 SUCCESS=1
 
+#PUSH_SWAP
 ARG1="3 2 a";
 ARG2="3 2 2";
 
@@ -29,6 +30,13 @@ ARG15="3 2 5 4 1";
 
 ARG16="5 4 3 2 1";
 ARG17="1 2 3 4 5";
+
+#PUSH_SWAP
+
+C_ARG1="2 1 a"
+C_ARG2="2 1 2"
+C_ARG3="3 2 2147483648";
+C_ARG4="3 2 -2147483649";
 
 format_checker_result() {
     local resultat="$1"
@@ -482,3 +490,28 @@ case "$SUCCESS" in
             echo ""
             ;;
 esac
+
+echo "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+echo "+++++++++++++++++++++++++ TEST CHECKER ++++++++++++++++++++++++";
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n";
+
+echo "\n============= ./checker \"$C_ARG1\" =============\n";
+echo "Checker output: \c";
+./checker $C_ARG1
+
+echo "\n============= ./checker \"$C_ARG2\" =============\n";
+echo "Checker output: \c";
+./checker $C_ARG2
+
+echo "\n============= ./checker \"$C_ARG3\" =============\n";
+echo "Checker output: \c";
+./checker $C_ARG3
+
+echo "\n============= ./checker \"$C_ARG4\" =============\n";
+echo "Checker output: \c";
+./checker $C_ARG4
+
+echo "\n============= ./checker \" \" =============\n";
+echo "Checker output: \c";
+./checker
+echo ""
