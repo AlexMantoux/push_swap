@@ -78,7 +78,6 @@ case $choix in
         checker="./checker_linux"
         ;;
     *)
-        echo "Choix invalide, utilisation de NOTRE checker"
         checker="./checker"
         ;;
 esac
@@ -87,8 +86,12 @@ shuf -i 1-500 -n 100 > shuffle_numbers.txt;
 shuf -i 1-200 -n 50 > shuffle_numbers2.txt;
 shuf -i 1-1000 -n 500 > shuffle_numbers3.txt;
 
-# echo "\n+++++++++++++ NORMINETTE +++++++++++++\n";
-# norminette;
+
+echo "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+echo "+++++++++++++++++++++++++++ NORMINETTE ++++++++++++++++++++++++";
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n";
+norminette;
+
 echo "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 echo "++++++++++++++++++++++++++++ COMPILE ++++++++++++++++++++++++++";
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n";

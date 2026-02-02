@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/01 17:08:39 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/02 09:04:04 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "gnl/get_next_line.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-static void error_quit()
+static void	error_quit(void)
 {
 	ft_printf(2, "Error\n");
 	exit(1);

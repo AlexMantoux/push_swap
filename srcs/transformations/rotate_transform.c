@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/01 17:18:41 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/02 09:05:08 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ static void	rotate_b_bis(t_list **stack_b)
 	last->next = first;
 }
 
-void	rotate_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
+void	rotate_a_b(t_list **stack_a, t_list **stack_b,
+			t_bench *bench, int print)
 {
 	if (!stack_a || !*stack_a)
 		return ;
