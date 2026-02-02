@@ -6,21 +6,18 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 09:39:27 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/31 06:45:11 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/02 16:35:06 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-#include <math.h>
 
 static int	ft_sqrt(int x)
 {
 	int	i;
 
 	i = 0;
-	if (x < 0)
-		return (-1);
-	if (x == 0)
+	if (x <= 0)
 		return (0);
 	while (i * i < x)
 		i++;
