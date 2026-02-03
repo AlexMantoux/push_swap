@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/02 09:04:04 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:54:00 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	char	*line;
 
 	init_bench(&bench);
-	if (argc < 3)
+	if (argc < 2)
 		return (1);
 	lst_a = NULL;
 	lst_b = NULL;

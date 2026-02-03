@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/03 10:29:50 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:53:47 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	t_flags	flags;
 	float	disorder;
 
-	if (argc < 3)
+	if (argc < 2)
 		return (1);
 	lst_a = NULL;
 	lst_b = NULL;

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:04:12 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/03 10:31:33 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 10:50:55 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,8 @@ int	complete_lst(char **argv, t_list **lst_a, t_flags *flags)
 		return (0);
 	f = validate_input(ret, flags, big_string);
 	i = ft_count_strings(ret);
-	if (f == -1 || f + 1 >= i)
-	{
-		free_tab(ret);
-		free(big_string);
+	if (f != 0 && (f == -1 || f + 1 >= i))
 		return (0);
-	}
 	if (!populate_list(ret, f, lst_a))
 	{
 		cleanup_and_error(ret, big_string, lst_a);
