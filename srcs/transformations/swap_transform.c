@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/01 17:19:50 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:02:20 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	swap_a(t_list **stack_a, t_bench *bench, int print)
+void	swap_a(t_list **stack_a, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*second;
@@ -26,11 +26,11 @@ void	swap_a(t_list **stack_a, t_bench *bench, int print)
 	second->next = first;
 	*stack_a = second;
 	bench->sa++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "sa\n");
 }
 
-void	swap_b(t_list **stack_b, t_bench *bench, int print)
+void	swap_b(t_list **stack_b, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*second;
@@ -43,7 +43,7 @@ void	swap_b(t_list **stack_b, t_bench *bench, int print)
 	second->next = first;
 	*stack_b = second;
 	bench->sb++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "sb\n");
 }
 
@@ -75,11 +75,11 @@ void	swap_b_bis(t_list **stack_b)
 	*stack_b = second;
 }
 
-void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print)
+void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench)
 {
 	swap_a_bis(stack_a);
 	swap_b_bis(stack_b);
 	bench->ss++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "ss\n");
 }

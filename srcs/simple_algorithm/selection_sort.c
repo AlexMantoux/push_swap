@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 13:15:21 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/31 06:42:30 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:05:35 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,18 @@ void	selection_sort(t_list **stack_a, t_list **stack_b, t_bench *bench)
 		if (min_pos <= size / 2)
 		{
 			while (min_pos-- > 0)
-				rotate_a(stack_a, bench, 1);
+				rotate_a(stack_a, bench);
 		}
 		else
 		{
 			while (min_pos++ < size)
-				reverse_rotate_a(stack_a, bench, 1);
+				reverse_rotate_a(stack_a, bench);
 		}
-		push_b(stack_a, stack_b, bench, 1);
+		push_b(stack_a, stack_b, bench);
 	}
 	if ((*stack_a)->content > (*stack_a)->next->content)
-		swap_a(stack_a, bench, 1);
+		swap_a(stack_a, bench);
 	while (*stack_b)
-		push_a(stack_a, stack_b, bench, 1);
+		push_a(stack_a, stack_b, bench);
 	bench->complexity = 's';
 }

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/03 10:54:00 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:13:20 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ static void	error_quit(void)
 static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 {
 	if (ft_strcmp("sa\n", line) == 0)
-		swap_a(lst_a, &bench, 0);
+		swap_a(lst_a, &bench);
 	else if (ft_strcmp("sb\n", line) == 0)
-		swap_b(lst_b, &bench, 0);
+		swap_b(lst_b, &bench);
 	else if (ft_strcmp("ss\n", line) == 0)
-		swap_a_b(lst_a, lst_b, &bench, 0);
+		swap_a_b(lst_a, lst_b, &bench);
 	else if (ft_strcmp("pa\n", line) == 0)
-		push_a(lst_a, lst_b, &bench, 0);
+		push_a(lst_a, lst_b, &bench);
 	else if (ft_strcmp("pb\n", line) == 0)
-		push_b(lst_a, lst_b, &bench, 0);
+		push_b(lst_a, lst_b, &bench);
 	else if (ft_strcmp("ra\n", line) == 0)
-		rotate_a(lst_a, &bench, 0);
+		rotate_a(lst_a, &bench);
 	else if (ft_strcmp("rb\n", line) == 0)
-		rotate_b(lst_b, &bench, 0);
+		rotate_b(lst_b, &bench);
 	else if (ft_strcmp("rr\n", line) == 0)
-		rotate_a_b(lst_a, lst_b, &bench, 0);
+		rotate_a_b(lst_a, lst_b, &bench);
 	else if (ft_strcmp("rra\n", line) == 0)
-		reverse_rotate_a(lst_a, &bench, 0);
+		reverse_rotate_a(lst_a, &bench);
 	else if (ft_strcmp("rrb\n", line) == 0)
-		reverse_rotate_b(lst_b, &bench, 0);
+		reverse_rotate_b(lst_b, &bench);
 	else if (ft_strcmp("rrr\n", line) == 0)
-		reverse_rotate_a_b(lst_a, lst_b, &bench, 0);
+		reverse_rotate_a_b(lst_a, lst_b, &bench);
 	else
 		error_quit();
 }
@@ -51,17 +51,24 @@ static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 static int	final_check(t_list *lst_a, t_list *lst_b)
 {
 	if (lst_b != NULL)
-		return (0);
+	{
+		ft_printf(1, "KO\n");
+		return (1);
+	}
 	while (lst_a != NULL)
 	{
 		if (lst_a->next != NULL)
 		{
 			if (lst_a->content > lst_a->next->content)
-				return (0);
+			{
+				ft_printf(1, "KO\n");
+				return (1);
+			}
 		}
 		lst_a = lst_a->next;
 	}
-	return (1);
+	ft_printf(1, "OK\n");
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -73,6 +80,7 @@ int	main(int argc, char **argv)
 	char	*line;
 
 	init_bench(&bench);
+	bench.silent = 1;
 	if (argc < 2)
 		return (1);
 	lst_a = NULL;
@@ -87,8 +95,5 @@ int	main(int argc, char **argv)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (final_check(lst_a, lst_b) == 1)
-		ft_printf(1, "OK\n");
-	else
-		ft_printf(1, "KO\n");
+	return (final_check(lst_a, lst_b));
 }

@@ -6,14 +6,14 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/02 09:05:08 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:01:40 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf/includes/ft_printf.h"
 #include "../../includes/push_swap.h"
 
-void	rotate_a(t_list **stack_a, t_bench *bench, int print)
+void	rotate_a(t_list **stack_a, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*last;
@@ -28,11 +28,11 @@ void	rotate_a(t_list **stack_a, t_bench *bench, int print)
 		last = last->next;
 	last->next = first;
 	bench->ra++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "ra\n");
 }
 
-void	rotate_b(t_list **stack_b, t_bench *bench, int print)
+void	rotate_b(t_list **stack_b, t_bench *bench)
 {
 	t_list	*first;
 	t_list	*last;
@@ -47,7 +47,7 @@ void	rotate_b(t_list **stack_b, t_bench *bench, int print)
 		last = last->next;
 	last->next = first;
 	bench->rb++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "rb\n");
 }
 
@@ -84,13 +84,13 @@ static void	rotate_b_bis(t_list **stack_b)
 }
 
 void	rotate_a_b(t_list **stack_a, t_list **stack_b,
-			t_bench *bench, int print)
+			t_bench *bench)
 {
 	if (!stack_a || !*stack_a)
 		return ;
 	rotate_a_bis(stack_a);
 	rotate_b_bis(stack_b);
 	bench->rr++;
-	if (print)
+	if (!(bench->silent))
 		ft_printf(1, "rr\n");
 }

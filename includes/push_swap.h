@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 09:05:42 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/02 16:13:53 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:02:59 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_count_bench
 	int		rrr;
 	int		adaptive;
 	char	complexity;
+	int		silent;
 }	t_bench;
 
 size_t	ft_strlen_dup(const char *s);
@@ -78,19 +79,19 @@ t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstclear(t_list **lst);
 
-void	swap_a(t_list **lst_a, t_bench *bench, int print);
-void	swap_b(t_list **lst_b, t_bench *bench, int print);
-void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print);
-void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench, int print);
-void	push_b(t_list **stack_a, t_list **stack_b, t_bench *bench, int print);
-void	rotate_a(t_list **stack_a, t_bench *bench, int print);
-void	rotate_b(t_list **stack_b, t_bench *bench, int print);
+void	swap_a(t_list **lst_a, t_bench *bench);
+void	swap_b(t_list **lst_b, t_bench *bench);
+void	swap_a_b(t_list **stack_a, t_list **stack_b, t_bench *bench);
+void	push_a(t_list **stack_a, t_list **stack_b, t_bench *bench);
+void	push_b(t_list **stack_a, t_list **stack_b, t_bench *bench);
+void	rotate_a(t_list **stack_a, t_bench *bench);
+void	rotate_b(t_list **stack_b, t_bench *bench);
 void	rotate_a_b(t_list **stack_a, t_list **stack_b,
-			t_bench *bench, int print);
-void	reverse_rotate_a(t_list **stack_a, t_bench *bench, int print);
-void	reverse_rotate_b(t_list **stack_b, t_bench *bench, int print);
+			t_bench *bench);
+void	reverse_rotate_a(t_list **stack_a, t_bench *bench);
+void	reverse_rotate_b(t_list **stack_b, t_bench *bench);
 void	reverse_rotate_a_b(t_list **stack_a, t_list **stack_b,
-			t_bench *bench, int print);
+			t_bench *bench);
 
 void	normalize_indices(t_list *stack);
 void	hard_sort(t_list **lst_a, t_bench *bench, t_flags flags);

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/01/30 07:17:17 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 12:58:58 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	init_bench(t_bench *bench)
 	bench->rrr = 0;
 	bench->adaptive = 0;
 	bench->complexity = '0';
+	bench->silent = 0;
 }
 
 static int	compute_total_op(t_bench *bench)

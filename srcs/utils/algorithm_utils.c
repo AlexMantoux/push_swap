@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 12:31:23 by amantoux          #+#    #+#             */
-/*   Updated: 2026/01/31 06:43:28 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:06:03 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,21 @@ static void	sort_hard(t_list **lst_a, t_bench *bench)
 	second = (*lst_a)->next->content;
 	third = (*lst_a)->next->next->content;
 	if (first > second && second < third && third < first)
-		rotate_a(lst_a, bench, 1);
+		rotate_a(lst_a, bench);
 	if (first > second && second > third && third < first)
 	{
-		swap_a(lst_a, bench, 1);
-		reverse_rotate_a(lst_a, bench, 1);
+		swap_a(lst_a, bench);
+		reverse_rotate_a(lst_a, bench);
 	}
 	if (first > second && second < third && third > first)
-		swap_a(lst_a, bench, 1);
+		swap_a(lst_a, bench);
 	if (first < second && second > third && third > first)
 	{
-		reverse_rotate_a(lst_a, bench, 1);
-		swap_a(lst_a, bench, 1);
+		reverse_rotate_a(lst_a, bench);
+		swap_a(lst_a, bench);
 	}
 	if (first < second && second > third && third < first)
-		reverse_rotate_a(lst_a, bench, 1);
+		reverse_rotate_a(lst_a, bench);
 }
 
 void	hard_sort(t_list **lst_a, t_bench *bench, t_flags flags)
@@ -75,7 +75,7 @@ void	hard_sort(t_list **lst_a, t_bench *bench, t_flags flags)
 		bench->complexity = 's';
 	}
 	if (ft_lstsize(*lst_a) == 2)
-		swap_a(lst_a, bench, 1);
+		swap_a(lst_a, bench);
 	else
 		sort_hard(lst_a, bench);
 }
