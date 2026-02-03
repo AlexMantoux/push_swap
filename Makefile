@@ -1,7 +1,7 @@
 NAME        = push_swap
 NAME_BONUS  = checker
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -MMD -MP -g
+CFLAGS      = -Wall -Wextra -Werror -MMD -MP
 
 PRINTF_DIR  = ft_printf
 INC_DIR     = includes
