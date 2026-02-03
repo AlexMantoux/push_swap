@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 15:49:42 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/03 13:39:24 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:43:09 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_isdigit(const char *str)
 
 	i = 0;
 	if (str[i] == '-' && str[i + 1] != '\0')
+		i++;
+	if (str[i] == '+' && str[i + 1] != '\0')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
