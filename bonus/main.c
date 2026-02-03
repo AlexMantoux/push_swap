@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/03 13:13:20 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/03 13:35:03 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 #include "gnl/get_next_line.h"
 #include "../../ft_printf/includes/ft_printf.h"
 
-static void	error_quit(void)
+static void	error_quit(t_list *lst_a, t_list *lst_b, char *line)
 {
 	ft_printf(2, "Error\n");
+	free(line);
+	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 	exit(1);
 }
 
@@ -45,7 +48,7 @@ static void	apply_op(t_list **lst_a, t_list **lst_b, char *line, t_bench bench)
 	else if (ft_strcmp("rrr\n", line) == 0)
 		reverse_rotate_a_b(lst_a, lst_b, &bench);
 	else
-		error_quit();
+		error_quit(*lst_a, *lst_b, line);
 }
 
 static int	final_check(t_list *lst_a, t_list *lst_b)
@@ -95,5 +98,7 @@ int	main(int argc, char **argv)
 		free(line);
 		line = get_next_line(0);
 	}
+	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
 	return (final_check(lst_a, lst_b));
 }
