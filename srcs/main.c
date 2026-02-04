@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:16:16 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/03 13:08:53 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:30:28 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ static void	push_swap(t_list *lst_a, t_list *lst_b,
 	float	disorder;
 
 	disorder = compute_disorder(lst_a);
-	normalize_indices(lst_a);
-	if (ft_lstsize(lst_a) <= 3)
-		hard_sort(&lst_a, &bench, flags);
-	else
-		flag_execution(flags, &lst_a, &lst_b, &bench);
+	if (disorder != 0)
+	{
+		normalize_indices(lst_a);
+		if (ft_lstsize(lst_a) <= 3)
+			hard_sort(&lst_a, &bench, flags);
+		else
+			flag_execution(flags, &lst_a, &lst_b, &bench);
+	}
 	if (flags.bench)
 		display_bench(&bench, disorder);
 	ft_lstclear(&lst_a);
@@ -36,7 +39,6 @@ int	main(int argc, char **argv)
 	t_list	*lst_b;
 	t_bench	bench;
 	t_flags	flags;
-	float	disorder;
 
 	if (argc < 2)
 		return (1);
@@ -46,12 +48,6 @@ int	main(int argc, char **argv)
 	init_bench(&bench);
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (1);
-	disorder = compute_disorder(lst_a);
-	if (disorder == 0 && !flags.bench)
-	{
-		ft_lstclear(&lst_a);
-		return (1);
-	}
 	push_swap(lst_a, lst_b, bench, flags);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/03 13:35:03 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:21:08 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,5 @@ int	main(int argc, char **argv)
 		free(line);
 		line = get_next_line(0);
 	}
-	ft_lstclear(&lst_a);
-	ft_lstclear(&lst_b);
 	return (final_check(lst_a, lst_b));
 }
