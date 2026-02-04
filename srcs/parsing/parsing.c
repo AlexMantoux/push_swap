@@ -89,7 +89,7 @@ int	complete_lst(char **argv, t_list **lst_a, t_flags *flags)
 	if (f == -1)
 		return (0);
 	i = ft_count_strings(ret);
-	if (f != 0 && (f == -1 || f + 1 >= i))
+	if (f != 0 && f + 1 >= i)
 	{
 		free_tab(ret);
 		free(big_string);
