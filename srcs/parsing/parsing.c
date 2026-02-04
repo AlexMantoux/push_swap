@@ -31,7 +31,9 @@ static int	validate_input(char **ret, t_flags *flags, char *big_string)
 {
 	int	f;
 
-	f = parse_flags(ret[0], flags);
+	f = 0;
+	if (ret[0])
+		f = parse_flags(ret[0], flags);
 	if (f && ret[1])
 		f += check_dooble_flags(ret[1], flags);
 	if (!ret[f])
