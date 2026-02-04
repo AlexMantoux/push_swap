@@ -40,7 +40,7 @@ In the `push_swap` project, efficiency is measured not just by theoretical compl
     * **Phase 2 (B to A):** We identify the maximum element in B and move it to the top using the **shortest path** (comparing its position to the midpoint to choose between `rb` or `rrb`).
 
 ### Complex Strategy: Radix Sort
-* **Complexity:** $O(n \cdot k)$ (where $k$ is the number of bits)
+* **Complexity:** $O(n \log{n})$ (where $k$ is the number of bits)
 * **Justification:** Radix sort is a non-comparative algorithm. By treating the pre-indexed values as binary strings, we sort the stack bit by bit. 
     * **Advantage:** It offers a highly stable number of moves, ensuring we never exceed the maximum threshold for large sets, even with the most difficult permutations.
 

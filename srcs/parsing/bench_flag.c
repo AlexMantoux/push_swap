@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 17:40:37 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/03 12:58:58 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/04 08:22:38 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	get_algo_name(t_bench *bench)
 		else if (bench->complexity == 'm')
 			ft_printf(2, "O(n√(n))");
 		else if (bench->complexity == 'c')
-			ft_printf(2, "O(n.log(n))");
+			ft_printf(2, "O(nlog(n))");
 	}
 	else
 	{
@@ -69,7 +69,7 @@ static void	get_algo_name(t_bench *bench)
 		else if (bench->complexity == 'm')
 			ft_printf(2, "Medium / O(n√(n))");
 		else if (bench->complexity == 'c')
-			ft_printf(2, "Complex / O(n.log(n))");
+			ft_printf(2, "Complex / O(nlog(n))");
 	}
 }
 
