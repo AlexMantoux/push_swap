@@ -17,9 +17,7 @@ int	ft_isdigit(const char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' && str[i + 1] != '\0')
-		i++;
-	if (str[i] == '+' && str[i + 1] != '\0')
+	if ((str[i] == '-' || str[i] == '+') && str[i + 1] != '\0')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
