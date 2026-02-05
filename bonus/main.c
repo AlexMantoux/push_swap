@@ -6,7 +6,7 @@
 /*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 07:54:41 by amantoux          #+#    #+#             */
-/*   Updated: 2026/02/04 16:21:08 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/02/05 09:34:03 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,29 +74,39 @@ static int	final_check(t_list *lst_a, t_list *lst_b)
 	return (0);
 }
 
+static void	read_and_exec(t_list **lst_a, t_list **lst_b, t_bench bench)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (line != NULL)
+	{
+		apply_op(lst_a, lst_b, line, bench);
+		free(line);
+		line = get_next_line(0);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
 	t_flags	flags;
 	t_bench	bench;
-	char	*line;
+	int		res;
 
+	if (argc < 2)
+		return (0);
 	init_bench(&bench);
 	bench.silent = 1;
-	if (argc < 2)
-		return (1);
 	lst_a = NULL;
 	lst_b = NULL;
 	flags_init(&flags);
 	if (!complete_lst(argv, &lst_a, &flags))
 		return (1);
-	line = get_next_line(0);
-	while (line != NULL)
-	{
-		apply_op(&lst_a, &lst_b, line, bench);
-		free(line);
-		line = get_next_line(0);
-	}
-	return (final_check(lst_a, lst_b));
+	read_and_exec(&lst_a, &lst_b, bench);
+	res = final_check(lst_a, lst_b);
+	ft_lstclear(&lst_a);
+	ft_lstclear(&lst_b);
+	return (res);
 }
