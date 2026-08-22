@@ -1,5 +1,7 @@
 *This project has been created as part of the 42 curriculum by amantoux, rtrutall*
 
+# Push_swap
+
 ## Description
 
 Push_swap is a project designed to introduce students to **algorithmic complexity**, **sorting algorithms**, and **stack manipulation**. It marks the first **group project** in the 42 curriculum.
@@ -55,31 +57,9 @@ To achieve the highest score, the program does not blindly apply an algorithm ba
 ## Resources
 
 * **[Push_swap Visualizer](https://github.com/o-reo/push_swap_visualizer)**: An incredible tool that allows you to see your algorithm in real-time. It helps in understanding how chunks are formed and moved.
-* **[Push_Swap: The Least Amount of Moves](https://medium.com/m/global-identity?redirectUrl=https%3A%2F%2Fjamie-dawson.medium.com%2Fpush-swap-the-least-amount-of-moves-2c13014a007d)**: A very popular guide that explains the logic of sorting with two stacks efficiently.
 * **[Complexity Analysis (Big O)](https://www.bigocheatsheet.com/)**: A quick reference to understand the efficiency of the different algorithms.
 * **[Binary and Radix Sort](https://www.geeksforgeeks.org/radix-sort/)**: A good read if you plan to implement Radix for the 500+ elements case.
-* **[Inversion Count Logic](https://www.geeksforgeeks.org/counting-inversions/)**: To help with your "Adaptive Strategy" and determine the disorder level of your stack.
 
-## Use of AI
-
-- To search for information about specific technical concepts (documentation, best practices, definitions).
-- To help draft or improve parts of this README, including translations into English while preserving the original meaning.
-
-## Contributions
-
-**Amantoux**
-- Stack operations
-- Simple algorithm
-- Medium algorithm
-- Disorder
-- benchmark mode
-- Readme
-- Checker
-
-**Rtrutall**
-- Parsing of arguments
-- Error gestion
-- Flags gestion
-- Complex algorithm
-- benchmark mode
-- useful functions for algorithms
+<h2 align="center">Educational use only</h2>
+<p align="center">Please do not copy this code for assessed work in 42 or other courses.</p>
+<p align="center">Use this repository for study and reference only.</p>

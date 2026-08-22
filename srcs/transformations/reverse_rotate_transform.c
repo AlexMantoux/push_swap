@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_transform.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amantoux <amantoux@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amantoux <amantoux@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 13:19:34 by rtrutall          #+#    #+#             */
-/*   Updated: 2026/02/03 13:01:18 by amantoux         ###   ########.fr       */
+/*   Updated: 2026/08/22 23:45:45 by amantoux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
